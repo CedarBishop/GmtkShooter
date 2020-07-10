@@ -1,18 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float movementSpeed;
+
+    private Rigidbody2D rigidbody;
+    private Vector2 direction;
+
     void Start()
     {
-        
+        rigidbody = GetComponent<Rigidbody2D>();    
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMove (InputValue value)
     {
-        
+        direction = value.Get<Vector2>().normalized;
+    }
+
+    void FixedUpdate()
+    {
+        rigidbody.velocity = direction * movementSpeed * Time.fixedDeltaTime;
     }
 }
