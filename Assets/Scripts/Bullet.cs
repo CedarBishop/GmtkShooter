@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float force;
-    public float damage;
     public float timeToLive;
-    public float rotationSpeed;
+    
+    private float force;
+    private int damage;
 
     private Rigidbody2D rigidbody;
-    void Start()
+    private float redirectAngle;
+    private float redirectTime;
+
+    private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
-        rigidbody.AddForce(transform.right * force);
-        StartCoroutine("DestroySelf");
     }
 
-    void Update()
+    public void Initialise (int Damage, float Force, float RedirectAngle, float RedirectTime)
+    {       
+        StartCoroutine("DestroySelf");
+        StartCoroutine("Redirect");
+        redirectAngle = RedirectAngle;
+        redirectTime = RedirectTime;
+        force = Force;
+        damage = Damage;
+    }
+
+    void FixedUpdate()
     {
-        transform.Rotate(0,0, rotationSpeed * Time.deltaTime);
+        rigidbody.velocity = transform.right * force * Time.fixedDeltaTime;
     }
 
     IEnumerator DestroySelf () 
@@ -28,8 +39,24 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
+    IEnumerator Redirect ()
+    {
+        yield return new WaitForSeconds(redirectTime);
+        transform.Rotate(0, 0, (redirectAngle) * -0.5f);
+        while (true)
+        {  
+            yield return new WaitForSeconds(redirectTime);
+            transform.Rotate(0,0,redirectAngle);
+            redirectAngle *= -1;
+        }
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.GetComponent<AIHealth>())
+        {
+            collision.GetComponent<AIHealth>().TakeDamage(damage);
+        }
     }
 }

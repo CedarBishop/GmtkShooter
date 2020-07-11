@@ -6,15 +6,21 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed;
+    
+    [HideInInspector]public int inverseControlReferences;
+    [HideInInspector]public int moveToAimReferences;
 
     private Rigidbody2D rigidbody;
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private Vector2 direction;
+
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void OnMove (InputValue value)
@@ -25,8 +31,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rigidbody.velocity = direction * movementSpeed * Time.fixedDeltaTime;
-        animator.SetBool("IsMoving", (Mathf.Abs(rigidbody.velocity.x) > 0.25f || Mathf.Abs(rigidbody.velocity.y) > 0.25f));  
-        
+        animator.SetBool("IsMoving", (Mathf.Abs(rigidbody.velocity.x) > 0.25f || Mathf.Abs(rigidbody.velocity.y) > 0.25f));
+        if (rigidbody.velocity.y > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else if (rigidbody.velocity.x < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
     }
 
     public void Knockback(Vector2 direction, float magnitude)

@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 7521234865645565526}
   - component: {fileID: 7521234865645565527}
   - component: {fileID: 4649285516271743361}
+  - component: {fileID: 5709182336884842818}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -230,7 +231,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -247,6 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 100
+  inverseControlReferences: 0
+  moveToAimReferences: 0
 --- !u!114 &7521234865645565529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,11 +268,20 @@ MonoBehaviour:
     type: 3}
   fireRate: 0.5
   cameraShakeDuration: 0.1
-  cameraShakeMagnitude: 0.2
+  cameraShakeMagnitude: 0.1
   sprayAmount: 10
-  bulletsPerShot: 3
   damage: 1
+  force: 200
+  bulletsPerShot: 1
+  bulletScale: 1
+  lightningBounceAmount: 0
+  sunExplodeBulletAmount: 0
   knockBackAmount: 3
+  redirectAngle: 0
+  redirectTime: 0.3
+  bulletDeviation: 0
+  enemyHealAmount: 0
+  enemySpeedupAmount: 0
 --- !u!58 &7521234865645565526
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -326,6 +338,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5709182336884842818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521234865645565524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 048cd3f1b46363b45af906724ac3d358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerups: []
+  powerupTimers: []
+  multiShotIncrease: 1
+  bulletScaleIncrease: 1
+  rapidFireMultiplier: 2
+  lightningEnemyCount: 2
+  damageIncrease: 1
+  sunExplodeBulletIncrease: 5
+  knockbackIncrease: 1000
+  zigzagAngleIncrease: 45
+  bulletDeviationIncrease: 10
+  healthToEnemyIncrease: 2
+  enemySpeedIncreaseOnHit: 100
 --- !u!1 &7521234866317753857
 GameObject:
   m_ObjectHideFlags: 0
