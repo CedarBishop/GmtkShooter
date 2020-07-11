@@ -32,8 +32,6 @@ public class WaveSystem : MonoBehaviour
         maxX = GameManager.instance.maxSpawnX;
         minY = GameManager.instance.minSpawnY;
         maxY = GameManager.instance.maxSpawnY;
-
-        StartGame();
     }
 
     public void StartGame ()
@@ -46,6 +44,7 @@ public class WaveSystem : MonoBehaviour
 
     void StartRound ()
     {
+        currentAisSpawnedThisRound = 0;
         aitypesSpawnedThisRound.Clear();
         aisDiedThisRound = 0;
         foreach (var ai in ais)
@@ -71,6 +70,7 @@ public class WaveSystem : MonoBehaviour
         {
             spawner.EndRound();
         }
+        aisToBeSpawnedThisRound += extraAISpawnedPerRound;
         StartCoroutine("DelayBetweenRounds");
     }
 
