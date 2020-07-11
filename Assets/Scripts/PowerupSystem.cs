@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Powerups {Double, Tripple }
+public enum Powerup {Double, Tripple }
 public class PowerupSystem : MonoBehaviour
 {
-    public List<Powerups> powerups = new List<Powerups>();
+    public List<Powerup> powerups = new List<Powerup>();
     public List<float> powerupTimers = new List<float>();
     private PlayerMovement playerMovement;
     private PlayerShoot playerShoot;
@@ -31,7 +31,7 @@ public class PowerupSystem : MonoBehaviour
         }        
     }
 
-    public void GainPowerup (Powerups power, float timeLastsfor)
+    public void GainPowerup (Powerup power, float timeLastsfor)
     {
         powerups.Add(power);
         powerupTimers.Add(timeLastsfor);

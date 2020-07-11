@@ -8,11 +8,13 @@ public class PlayerMovement : MonoBehaviour
     public float movementSpeed;
 
     private Rigidbody2D rigidbody;
+    private Animator animator;
     private Vector2 direction;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();    
+        rigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void OnMove (InputValue value)
@@ -23,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rigidbody.velocity = direction * movementSpeed * Time.fixedDeltaTime;
+        animator.SetBool("IsMoving", (Mathf.Abs(rigidbody.velocity.x) > 0.25f || Mathf.Abs(rigidbody.velocity.y) > 0.25f));        
     }
 
     public void Knockback(Vector2 direction, float magnitude)

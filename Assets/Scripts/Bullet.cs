@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float force;
     public float damage;
     public float timeToLive;
+    public float rotationSpeed;
 
     private Rigidbody2D rigidbody;
     void Start()
@@ -16,10 +17,9 @@ public class Bullet : MonoBehaviour
         StartCoroutine("DestroySelf");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(0,0, rotationSpeed * Time.deltaTime);
     }
 
     IEnumerator DestroySelf () 
