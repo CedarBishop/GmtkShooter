@@ -112,7 +112,7 @@ Transform:
   m_GameObject: {fileID: 6188542974064808973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.591, y: 0.609, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 5937335291478544964}
   m_Father: {fileID: 0}
@@ -190,6 +190,7 @@ MonoBehaviour:
   attackDistance: 1
   alertDistance: 5
   patrolTargetDistance: 5
+  score: 0
 --- !u!114 &1807775799167696688
 MonoBehaviour:
   m_ObjectHideFlags: 0
