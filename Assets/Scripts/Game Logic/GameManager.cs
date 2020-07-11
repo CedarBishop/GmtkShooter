@@ -8,6 +8,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
     public string mainMenuSceneName;
     public string gameSceneName;
+
+    public float minSpawnX;
+    public float maxSpawnX;
+    public float minSpawnY;
+    public float maxSpawnY;
+
     private void Awake()
     {
         if (instance == null)
@@ -36,5 +42,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
+
+    public bool IsWithinMap (Vector2 pos)
+    {
+        if (pos.x > minSpawnX && pos.x < maxSpawnX)
+        {
+            if (pos.y > minSpawnY && pos.y < maxSpawnY)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

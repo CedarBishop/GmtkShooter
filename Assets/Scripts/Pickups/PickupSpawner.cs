@@ -8,13 +8,17 @@ public class PickupSpawner : MonoBehaviour
     public int waveStartsSpawning;
     public float timeBetweenSpawns;
 
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    private float minX;
+    private float maxX;
+    private float minY;
+    private float maxY;
 
     private void Start()
     {
+        minX = GameManager.instance.minSpawnX;
+        maxX = GameManager.instance.maxSpawnX;
+        minY = GameManager.instance.minSpawnY;
+        maxY = GameManager.instance.maxSpawnY;
         StartRound(0);
     }
 

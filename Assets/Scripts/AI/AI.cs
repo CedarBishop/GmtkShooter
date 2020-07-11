@@ -10,4 +10,5 @@ public class AI : MonoBehaviour
     public float attackCooldown;
     public float attackDistance;
     public float alertDistance;
+    public float patrolTargetDistance;
 }

@@ -42,7 +42,7 @@ public class AI_MoveToPlayer : StateMachineBehaviour
 
         if (CheckDistance(ai.alertDistance) == false)
         {
-            animator.SetBool("IsHurt", false);
+            animator.SetBool("IsAlert", false);
         }
     }
 
