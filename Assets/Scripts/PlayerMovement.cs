@@ -25,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rigidbody.velocity = direction * movementSpeed * Time.fixedDeltaTime;
-        animator.SetBool("IsMoving", (Mathf.Abs(rigidbody.velocity.x) > 0.25f || Mathf.Abs(rigidbody.velocity.y) > 0.25f));        
+        animator.SetBool("IsMoving", (Mathf.Abs(rigidbody.velocity.x) > 0.25f || Mathf.Abs(rigidbody.velocity.y) > 0.25f));  
+        
     }
 
     public void Knockback(Vector2 direction, float magnitude)
