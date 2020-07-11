@@ -2,28 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Buff {Multishot, Scale, RapidFire, Lightning, DamageUp, SunExplode  }
+public enum Buff {Multishot, Scale, RapidFire, Lightning, SunExplode  }
 public enum Nerf {Knockback, Zigzag, Inaccuracy, HealEnemies, MoveToAim, InverseControl, BlurScreen, EnemySpeedUp  }
 public class PowerupSystem : MonoBehaviour
 {
     public List<PowerUp> powerups = new List<PowerUp>();
     public List<float> powerupTimers = new List<float>();
 
-    [Header("Buff Amounts")]
-    public int multiShotIncrease;
-    public int bulletScaleIncrease;
-    public float rapidFireMultiplier;
-    public int lightningEnemyCount;
-    public int damageIncrease;
-    public int sunExplodeBulletIncrease;
-
-    [Header("Nerf Amounts")]
-    public float knockbackIncrease;
-    public float zigzagAngleIncrease;
-    public float bulletDeviationIncrease;
-    public int healthToEnemyIncrease;
-    public float enemySpeedIncreaseOnHit;
-
+    public PowerupStats powerupStats;
 
     private PlayerMovement playerMovement;
     private PlayerShoot playerShoot;
@@ -56,22 +42,20 @@ public class PowerupSystem : MonoBehaviour
         switch (powerUp.buff)
         {
             case Buff.Multishot:
-                playerShoot.bulletsPerShot += 1;
+                playerShoot.bulletsPerShot += powerupStats.multiShotIncrease;
                 break;
             case Buff.Scale:
-                playerShoot.bulletScale += 1.0f;
+                playerShoot.bulletScale += powerupStats.bulletScaleIncrease;
+                playerShoot.damage += powerupStats.damageIncrease;
                 break;
             case Buff.RapidFire:
-                playerShoot.fireRate /= rapidFireMultiplier;
+                playerShoot.fireRate /= powerupStats.rapidFireMultiplier;
                 break;
             case Buff.Lightning:
-                playerShoot.lightningBounceAmount += lightningEnemyCount;
-                break;
-            case Buff.DamageUp:
-                playerShoot.damage += damageIncrease;
+                playerShoot.lightningBounceAmount += powerupStats.lightningEnemyCount;
                 break;
             case Buff.SunExplode:
-                playerShoot.sunExplodeBulletAmount += sunExplodeBulletIncrease;
+                playerShoot.sunExplodeBulletAmount += powerupStats.sunExplodeBulletIncrease;
                 break;
             default:
                 break;
@@ -80,16 +64,16 @@ public class PowerupSystem : MonoBehaviour
         switch (powerUp.nerf)
         {
             case Nerf.Knockback:
-                playerShoot.knockBackAmount += knockbackIncrease;
+                playerShoot.knockBackAmount += powerupStats.knockbackIncrease;
                 break;
             case Nerf.Zigzag:
-                playerShoot.redirectAngle += zigzagAngleIncrease;
+                playerShoot.redirectAngle += powerupStats.zigzagAngleIncrease;
                 break;
             case Nerf.Inaccuracy:
-                playerShoot.bulletDeviation += bulletDeviationIncrease;
+                playerShoot.bulletDeviation += powerupStats.bulletDeviationIncrease;
                 break;
             case Nerf.HealEnemies:
-                playerShoot.enemyHealAmount += healthToEnemyIncrease;
+                playerShoot.enemyHealAmount += powerupStats.healthToEnemyIncrease;
                 break;
             case Nerf.MoveToAim:
                 playerMovement.moveToAimReferences++;
@@ -100,7 +84,7 @@ public class PowerupSystem : MonoBehaviour
             case Nerf.BlurScreen:
                 break;
             case Nerf.EnemySpeedUp:
-                playerShoot.enemySpeedupAmount += enemySpeedIncreaseOnHit;
+                playerShoot.enemySpeedupAmount += powerupStats.enemySpeedIncreaseOnHit;
                 break;
             default:
                 break;
@@ -116,22 +100,20 @@ public class PowerupSystem : MonoBehaviour
         switch (powerups[index].buff)
         {
             case Buff.Multishot:
-                playerShoot.bulletsPerShot -= 1;
+                playerShoot.bulletsPerShot -= powerupStats.multiShotIncrease;
                 break;
             case Buff.Scale:
-                playerShoot.bulletScale -= 1.0f;
+                playerShoot.bulletScale -= powerupStats.bulletScaleIncrease;
+                playerShoot.damage -= powerupStats.damageIncrease;
                 break;
             case Buff.RapidFire:
-                playerShoot.fireRate *= rapidFireMultiplier;
+                playerShoot.fireRate *= powerupStats.rapidFireMultiplier;
                 break;
             case Buff.Lightning:
-                playerShoot.lightningBounceAmount -= lightningEnemyCount;
-                break;
-            case Buff.DamageUp:
-                playerShoot.damage -= damageIncrease;
+                playerShoot.lightningBounceAmount -= powerupStats.lightningEnemyCount;
                 break;
             case Buff.SunExplode:
-                playerShoot.sunExplodeBulletAmount -= sunExplodeBulletIncrease;
+                playerShoot.sunExplodeBulletAmount -= powerupStats.sunExplodeBulletIncrease;
                 break;
             default:
                 break;
@@ -140,16 +122,16 @@ public class PowerupSystem : MonoBehaviour
         switch (powerups[index].nerf)
         {
             case Nerf.Knockback:
-                playerShoot.knockBackAmount -= knockbackIncrease;
+                playerShoot.knockBackAmount -= powerupStats.knockbackIncrease;
                 break;
             case Nerf.Zigzag:
-                playerShoot.redirectAngle -= zigzagAngleIncrease;
+                playerShoot.redirectAngle -= powerupStats.zigzagAngleIncrease;
                 break;
             case Nerf.Inaccuracy:
-                playerShoot.bulletDeviation -= bulletDeviationIncrease;
+                playerShoot.bulletDeviation -= powerupStats.bulletDeviationIncrease;
                 break;
             case Nerf.HealEnemies:
-                playerShoot.enemyHealAmount -= healthToEnemyIncrease;
+                playerShoot.enemyHealAmount -= powerupStats.healthToEnemyIncrease;
                 break;
             case Nerf.MoveToAim:
                 playerMovement.moveToAimReferences--;
@@ -160,7 +142,7 @@ public class PowerupSystem : MonoBehaviour
             case Nerf.BlurScreen:
                 break;
             case Nerf.EnemySpeedUp:
-                playerShoot.enemySpeedupAmount -= enemySpeedIncreaseOnHit;
+                playerShoot.enemySpeedupAmount -= powerupStats.enemySpeedIncreaseOnHit;
                 break;
             default:
                 break;
@@ -177,4 +159,24 @@ public struct PowerUp
 {
     public Buff buff;
     public Nerf nerf;
+}
+
+[CreateAssetMenu(menuName ="Powerup Effect Amounts")]
+public class PowerupStats : ScriptableObject
+{
+    [Header("Buff Amounts")]
+    public int multiShotIncrease;
+    public int bulletScaleIncrease;
+    public float rapidFireMultiplier;
+    public int lightningEnemyCount;
+    public int damageIncrease;
+    public int sunExplodeBulletIncrease;
+
+    [Header("Nerf Amounts")]
+    public float knockbackIncrease;
+    public float knockbackAngleIncrease;
+    public float zigzagAngleIncrease;
+    public float bulletDeviationIncrease;
+    public int healthToEnemyIncrease;
+    public float enemySpeedIncreaseOnHit;
 }

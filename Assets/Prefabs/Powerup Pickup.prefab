@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3399885471300124340}
   - component: {fileID: 5420895452561787335}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: Powerup Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ab8803b5c1a1d49bad63af871808fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleBuffs: 0000000001000000
-  possibleNerfs: 0000000001000000
-  duration: 10
   timeToLive: 10
+  possibleBuffs: 0000000001000000
+  possibleNerfs: 0000000002000000
+  duration: 10

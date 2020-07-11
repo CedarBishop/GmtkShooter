@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickups : MonoBehaviour
+public class PowerupPickup : Pickup
 {
     public Buff[] possibleBuffs;
     public Nerf[] possibleNerfs;
     public float duration;
-    public float timeToLive;
-
-    void Start()
-    {
-        StartCoroutine("DestroySelf");
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,9 +18,5 @@ public class Pickups : MonoBehaviour
         }
     }
 
-    IEnumerator DestroySelf()
-    {
-        yield return new WaitForSeconds(timeToLive);
-        Destroy(gameObject);
-    }
+    
 }

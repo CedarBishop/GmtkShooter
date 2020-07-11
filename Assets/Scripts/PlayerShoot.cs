@@ -15,6 +15,8 @@ public class PlayerShoot : MonoBehaviour
     public int damage;
     public float force;
  
+    [HideInInspector] public bool isHoldingShootButton;
+    
     [Header("Buff Stats")]
     public int bulletsPerShot = 1;
     public float bulletScale;
@@ -23,6 +25,7 @@ public class PlayerShoot : MonoBehaviour
 
     [Header("Nerf Stats")]
     public float knockBackAmount;
+    public float knockbackAngle;
     public float redirectAngle;
     public float redirectTime;
     public float bulletDeviation;
@@ -36,7 +39,6 @@ public class PlayerShoot : MonoBehaviour
 
     private bool isGamepad;
     private bool canShoot;
-    private bool isHoldingShootButton;
 
 
     void Start()
@@ -103,7 +105,7 @@ public class PlayerShoot : MonoBehaviour
                     bulletSpawnPoint.position,
                     gunOriginTransform.rotation);
 
-                bullet.Initialise(damage,force,redirectAngle,redirectTime);
+                bullet.Initialise(damage,force,redirectAngle,redirectTime, bulletDeviation);
                 bullet.transform.localScale = new Vector3(bulletScale, bulletScale, bulletScale);
                 zRotation += sprayAmount;
 
@@ -116,7 +118,7 @@ public class PlayerShoot : MonoBehaviour
                    bulletSpawnPoint.position,
                    gunOriginTransform.rotation);
 
-            bullet.Initialise(damage, force, redirectAngle, redirectTime);
+            bullet.Initialise(damage, force, redirectAngle, redirectTime, bulletDeviation);
             bullet.transform.localScale = new Vector3(bulletScale, bulletScale, bulletScale);
         }        
         
@@ -128,7 +130,8 @@ public class PlayerShoot : MonoBehaviour
 
         if (playerMovement != null)
         {
-            playerMovement.Knockback(gunOriginTransform.right, knockBackAmount);
+            Vector3 addedRotation = new Vector3(0,0, Random.Range(-knockbackAngle, knockbackAngle));
+            playerMovement.Knockback(gunOriginTransform.right + addedRotation, knockBackAmount);
         }
 
         StartCoroutine("DelayShoot");
