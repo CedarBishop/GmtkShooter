@@ -263,7 +263,7 @@ MonoBehaviour:
   gunOriginTransform: {fileID: 7831789716283092734}
   bulletPrefab: {fileID: 1733272096102337619, guid: 84a1a1cd72b2aa446971ba63c26f930e,
     type: 3}
-  timeBetweenShots: 0.5
+  fireRate: 0.5
   cameraShakeDuration: 0.1
   cameraShakeMagnitude: 0.2
   sprayAmount: 10

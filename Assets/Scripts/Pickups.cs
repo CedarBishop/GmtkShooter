@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class Pickups : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Powerup powerup;
+    public float duration;
+    public float effectAmount;
+    public float timeToLive;
+
     void Start()
     {
-        
+        StartCoroutine("DestroySelf");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.GetComponent<PowerupSystem>())
+        {
+            other.GetComponent<PowerupSystem>().GainPowerup(powerup,duration);
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator DestroySelf()
+    {
+        yield return new WaitForSeconds(timeToLive);
+        Destroy(gameObject);
     }
 }

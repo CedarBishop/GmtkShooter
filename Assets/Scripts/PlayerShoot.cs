@@ -8,7 +8,7 @@ public class PlayerShoot : MonoBehaviour
     public Transform bulletSpawnPoint;
     public Transform gunOriginTransform;
     public Bullet bulletPrefab;
-    public float timeBetweenShots;
+    public float fireRate;
     public float cameraShakeDuration;
     public float cameraShakeMagnitude;
     public float sprayAmount;
@@ -121,7 +121,7 @@ public class PlayerShoot : MonoBehaviour
     IEnumerator DelayShoot ()
     {
         canShoot = false;
-        yield return new WaitForSeconds(timeBetweenShots);
+        yield return new WaitForSeconds(fireRate);
         canShoot = true;
     }
 }
