@@ -133,4 +133,9 @@ public class UIManager : MonoBehaviour
         //// Update Badge Colour Fill Slider to fade away.
 
     }
+
+    private void InstantiateBadge()
+    {
+        //GameObject Instantiate
+    }
 }
