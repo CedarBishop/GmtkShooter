@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RapidFire
   m_EditorClassIdentifier: Assembly-CSharp::BuffData
   buff: 2
-  buffIcon: {fileID: 0}
-  badgeColor: {r: 0, g: 0, b: 0, a: 0}
+  buffIcon: {fileID: 21300000, guid: 2721e584edd418841af3678edf852682, type: 3}
+  badgeColor: {r: 0.46045873, g: 0.8962264, b: 0.34242615, a: 0}

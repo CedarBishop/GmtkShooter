@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Lightning
   m_EditorClassIdentifier: Assembly-CSharp::BuffData
   buff: 3
-  buffIcon: {fileID: 0}
-  badgeColor: {r: 0, g: 0, b: 0, a: 0}
+  buffIcon: {fileID: 21300000, guid: 3e3a1a2a865b7e04fb645cf3344ccdea, type: 3}
+  badgeColor: {r: 1, g: 0.8378445, b: 0, a: 0}
