@@ -19,7 +19,6 @@ public class PickupSpawner : MonoBehaviour
         maxX = GameManager.instance.maxSpawnX;
         minY = GameManager.instance.minSpawnY;
         maxY = GameManager.instance.maxSpawnY;
-        StartRound(0);
     }
 
     public void StartRound (int roundNumber)

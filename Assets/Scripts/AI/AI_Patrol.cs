@@ -57,7 +57,6 @@ public class AI_Patrol : StateMachineBehaviour
         {
             pos = new Vector2(Random.Range(-ai.patrolTargetDistance, ai.patrolTargetDistance), Random.Range(-ai.patrolTargetDistance, ai.patrolTargetDistance));
         } while (GameManager.instance.IsWithinMap(pos) == false);
-        Debug.Log(pos);
         return pos;
     }
 }

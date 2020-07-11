@@ -11,4 +11,5 @@ public class AI : MonoBehaviour
     public float attackDistance;
     public float alertDistance;
     public float patrolTargetDistance;
+    public int score;
 }

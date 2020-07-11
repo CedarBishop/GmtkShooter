@@ -44,8 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90b4f5d1c53e8224b87987f2d3495d0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuSceneName: 
-  gameSceneName: 
+  mainMenuSceneName: MainMenu
+  gameSceneName: GameScene
+  waveSystem: {fileID: 3277274780619392996}
+  minSpawnX: -10
+  maxSpawnX: 10
+  minSpawnY: -10
+  maxSpawnY: 10
 --- !u!114 &3277274780619392996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +63,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04e0a4ccf4910364d8027af78ac22f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ais:
+  - ai: {fileID: 4584077119857896133, guid: 3709c7658e3fff34ebf237b07394b9ca, type: 3}
+    roundWhenStartSpawning: 1
+  - ai: {fileID: 4584077119857896133, guid: 2c400bed87881684a97a5e5e51e18e31, type: 3}
+    roundWhenStartSpawning: 2
+  roundNumber: 0
+  extraAISpawnedPerRound: 5
+  roundOneAISpawnAmount: 5
+  timeBetweenSpawns: 2
+  timeBetweenRounds: 3
+  currentScore: 0
+  pickupSpawners: []

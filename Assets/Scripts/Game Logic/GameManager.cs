@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public string mainMenuSceneName;
     public string gameSceneName;
 
+    public WaveSystem waveSystem;
+
     public float minSpawnX;
     public float maxSpawnX;
     public float minSpawnY;
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(gameSceneName);
+        waveSystem.StartGame();
     }
 
     public void GameOver()
@@ -37,7 +40,7 @@ public class GameManager : MonoBehaviour
         UIManager.instance.SetUIState(UIState.EndMatch);
     }
 
-    public void EndGame()
+    public void GoToMainMenu()
     {
         SceneManager.LoadScene(mainMenuSceneName);
     }

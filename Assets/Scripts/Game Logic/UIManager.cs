@@ -93,7 +93,7 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu ()
     {
-        GameManager.instance.EndGame();
+        GameManager.instance.GoToMainMenu();
         SetUIState(UIState.MainMenu);
     }
 

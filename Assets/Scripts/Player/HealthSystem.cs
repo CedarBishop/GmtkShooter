@@ -8,6 +8,7 @@ public class HealthSystem : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Material material;
     private float flashTime = 0.2f;
+    Color originalColor;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class HealthSystem : MonoBehaviour
     public virtual void TakeDamage (int damage)
     {
         health -= damage;
+        //originalColor = spriteRenderer.color;
         StartCoroutine("HurtFlash");
         if (health <= 0)
         {
@@ -37,8 +39,10 @@ public class HealthSystem : MonoBehaviour
 
     IEnumerator HurtFlash ()
     {
-        material.SetFloat("_IsHurt", 1.0f);
-        yield return new WaitForSeconds(flashTime);
-        material.SetFloat("_IsHurt", 0.0f);
+        //spriteRenderer.color = Color.white;
+        //material.SetFloat("_IsHurt", 1.0f);
+        //yield return new WaitForSeconds(flashTime);
+        //material.SetFloat("_IsHurt", 0.0f);
+        //spriteRenderer.color = originalColor;
     }
 }
