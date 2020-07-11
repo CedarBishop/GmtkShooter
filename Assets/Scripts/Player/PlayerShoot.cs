@@ -14,6 +14,8 @@ public class PlayerShoot : MonoBehaviour
     public float sprayAmount;
     public int damage;
     public float force;
+
+    public Vector3 controllerAim;
  
     [HideInInspector] public bool isHoldingShootButton;
     
@@ -53,7 +55,8 @@ public class PlayerShoot : MonoBehaviour
 
     void OnAim (InputValue value)
     {
-        Vector2 aim = (value.Get<Vector2>()).normalized;
+        controllerAim = (value.Get<Vector2>());
+        Vector2 aim = controllerAim.normalized;
         if (Mathf.Abs(aim.x) > 0.25f || Mathf.Abs(aim.y) > 0.25f)
         {
             gunOriginTransform.right = aim;
