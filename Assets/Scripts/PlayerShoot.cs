@@ -12,9 +12,22 @@ public class PlayerShoot : MonoBehaviour
     public float cameraShakeDuration;
     public float cameraShakeMagnitude;
     public float sprayAmount;
-    public int bulletsPerShot = 1;
     public int damage;
+    public float force;
+ 
+    [Header("Buff Stats")]
+    public int bulletsPerShot = 1;
+    public float bulletScale;
+    public int lightningBounceAmount;
+    public int sunExplodeBulletAmount;
+
+    [Header("Nerf Stats")]
     public float knockBackAmount;
+    public float redirectAngle;
+    public float redirectTime;
+    public float bulletDeviation;
+    public int enemyHealAmount;
+    public float enemySpeedupAmount;
 
     private PlayerInput playerInput;
     private Camera mainCamera;
@@ -85,12 +98,13 @@ public class PlayerShoot : MonoBehaviour
             float zRotation = originalZRotation - ((bulletsPerShot / 2) * sprayAmount);
             for (int i = 0; i < bulletsPerShot; i++)
             {
-
                 gunOriginTransform.rotation = Quaternion.Euler(0, 0, zRotation);
                 Bullet bullet = Instantiate(bulletPrefab,
                     bulletSpawnPoint.position,
                     gunOriginTransform.rotation);
-                bullet.damage = damage;
+
+                bullet.Initialise(damage,force,redirectAngle,redirectTime);
+                bullet.transform.localScale = new Vector3(bulletScale, bulletScale, bulletScale);
                 zRotation += sprayAmount;
 
             }
@@ -101,7 +115,9 @@ public class PlayerShoot : MonoBehaviour
             Bullet bullet = Instantiate(bulletPrefab,
                    bulletSpawnPoint.position,
                    gunOriginTransform.rotation);
-            bullet.damage = damage;
+
+            bullet.Initialise(damage, force, redirectAngle, redirectTime);
+            bullet.transform.localScale = new Vector3(bulletScale, bulletScale, bulletScale);
         }        
         
 

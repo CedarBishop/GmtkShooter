@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Pickups : MonoBehaviour
 {
-    public Powerup powerup;
+    public Buff[] possibleBuffs;
+    public Nerf[] possibleNerfs;
     public float duration;
-    public float effectAmount;
     public float timeToLive;
 
     void Start()
@@ -14,11 +14,11 @@ public class Pickups : MonoBehaviour
         StartCoroutine("DestroySelf");
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<PowerupSystem>())
         {
-            other.GetComponent<PowerupSystem>().GainPowerup(powerup,duration);
+            other.GetComponent<PowerupSystem>().GainPowerup(possibleBuffs, possibleNerfs,duration);
             Destroy(gameObject);
         }
     }
