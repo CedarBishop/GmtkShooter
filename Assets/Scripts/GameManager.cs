@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
+    public string mainMenuSceneName;
+    public string gameSceneName;
     private void Awake()
     {
         if (instance == null)
@@ -21,11 +23,18 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-
+        SceneManager.LoadScene(gameSceneName);
     }
 
     public void GameOver()
     {
-
+        UIManager.instance.SetUIState(UIState.EndMatch);
     }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
+
+
 }

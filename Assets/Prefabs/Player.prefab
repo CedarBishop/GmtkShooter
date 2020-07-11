@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 7521234865645565527}
   - component: {fileID: 4649285516271743361}
   - component: {fileID: 5709182336884842818}
+  - component: {fileID: 886150790776114784}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -171,7 +172,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 4f8bcca60e7f4be45a4e97b15ea94803, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -231,7 +232,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -247,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6dd523e84823745847b39a309686d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 100
+  movementSpeed: 150
   inverseControlReferences: 0
   moveToAimReferences: 0
 --- !u!114 &7521234865645565529
@@ -320,7 +321,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &4649285516271743361
 Animator:
   serializedVersion: 3
@@ -355,18 +356,19 @@ MonoBehaviour:
   powerups: []
   powerupTimers: []
   powerupStats: {fileID: 11400000, guid: b57867d789a8e3f48860a71e478dd099, type: 2}
-  multiShotIncrease: 1
-  bulletScaleIncrease: 1
-  rapidFireMultiplier: 2
-  lightningEnemyCount: 2
-  damageIncrease: 1
-  sunExplodeBulletIncrease: 5
-  knockbackIncrease: 1000
-  knockbackAngleIncrease: 0
-  zigzagAngleIncrease: 45
-  bulletDeviationIncrease: 10
-  healthToEnemyIncrease: 2
-  enemySpeedIncreaseOnHit: 100
+--- !u!114 &886150790776114784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521234865645565524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22953be2772892f4fa89c56c23e11a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
 --- !u!1 &7521234866317753857
 GameObject:
   m_ObjectHideFlags: 0

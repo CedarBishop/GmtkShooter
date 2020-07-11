@@ -15,12 +15,12 @@ MonoBehaviour:
   multiShotIncrease: 1
   bulletScaleIncrease: 1
   rapidFireMultiplier: 2
-  lightningEnemyCount: 1
+  lightningEnemyCount: 2
   damageIncrease: 1
   sunExplodeBulletIncrease: 5
-  knockbackIncrease: 200
+  knockbackIncrease: 1000
   knockbackAngleIncrease: 20
   zigzagAngleIncrease: 30
-  bulletDeviationIncrease: 20
+  bulletDeviationIncrease: 10
   healthToEnemyIncrease: 2
   enemySpeedIncreaseOnHit: 50

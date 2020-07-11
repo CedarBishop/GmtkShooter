@@ -59,6 +59,7 @@ public class Bullet : MonoBehaviour
         if (collision.GetComponent<AIHealth>())
         {
             collision.GetComponent<AIHealth>().TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }

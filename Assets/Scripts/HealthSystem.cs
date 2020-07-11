@@ -32,7 +32,7 @@ public class HealthSystem : MonoBehaviour
 
     protected virtual void Death ()
     {
-
+        Destroy(gameObject);
     }
 
     IEnumerator HurtFlash ()

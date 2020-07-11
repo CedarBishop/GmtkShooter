@@ -147,9 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 10
-  possibleBuffs: 0000000001000000
-  possibleNerfs: 0000000002000000
-  duration: 10
+  possibleBuffs: 000000000100000002000000
+  possibleNerfs: 0000000001000000020000000400000005000000
+  duration: 15
 --- !u!95 &7535240965955641460
 Animator:
   serializedVersion: 3
