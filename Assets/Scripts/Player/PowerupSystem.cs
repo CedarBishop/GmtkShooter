@@ -35,11 +35,11 @@ public class PowerupSystem : MonoBehaviour
         }        
     }
 
-    public void GainPowerup(Buff[] buffs, Nerf[] nerfs, float timeLastsfor)
+    public void GainPowerup(BuffData[] buffs, NerfData[] nerfs, float timeLastsfor)
     {
         PowerUp powerUp = new PowerUp() { buff = buffs[Random.Range(0, buffs.Length)], nerf = nerfs[Random.Range(0, nerfs.Length)]};
 
-        switch (powerUp.buff)
+        switch (powerUp.buff.buff)
         {
             case Buff.Multishot:
                 playerShoot.bulletsPerShot += powerupStats.multiShotIncrease;
@@ -47,44 +47,56 @@ public class PowerupSystem : MonoBehaviour
             case Buff.Scale:
                 playerShoot.bulletScale += powerupStats.bulletScaleIncrease;
                 playerShoot.damage += powerupStats.damageIncrease;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Buff.RapidFire:
                 playerShoot.fireRate /= powerupStats.rapidFireMultiplier;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Buff.Lightning:
                 playerShoot.lightningBounceAmount += powerupStats.lightningEnemyCount;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Buff.SunExplode:
                 playerShoot.sunExplodeBulletAmount += powerupStats.sunExplodeBulletIncrease;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             default:
                 break;
         }
 
-        switch (powerUp.nerf)
+        switch (powerUp.nerf.nerf)
         {
             case Nerf.Knockback:
                 playerShoot.knockBackAmount += powerupStats.knockbackIncrease;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.Zigzag:
                 playerShoot.redirectAngle += powerupStats.zigzagAngleIncrease;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.Inaccuracy:
                 playerShoot.bulletDeviation += powerupStats.bulletDeviationIncrease;
+                ///UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.HealEnemies:
                 playerShoot.enemyHealAmount += powerupStats.healthToEnemyIncrease;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.MoveToAim:
                 playerMovement.moveToAimReferences++;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.InverseControl:
                 playerMovement.inverseControlReferences++;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.BlurScreen:
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.EnemySpeedUp:
                 playerShoot.enemySpeedupAmount += powerupStats.enemySpeedIncreaseOnHit;
+                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             default:
                 break;
@@ -93,11 +105,13 @@ public class PowerupSystem : MonoBehaviour
 
         powerups.Add(powerUp);
         powerupTimers.Add(timeLastsfor);
+        UIManager.instance.CreateBuffBadge(powerUp.buff.badgeColor, powerUp.buff.buffIcon, timeLastsfor);
+        UIManager.instance.CreateNerfBadge(powerUp.nerf.badgeColor, powerUp.nerf.nerfIcon, timeLastsfor);
     }
 
     public void LosePowerup (int index)
     {
-        switch (powerups[index].buff)
+        switch (powerups[index].buff.buff)
         {
             case Buff.Multishot:
                 playerShoot.bulletsPerShot -= powerupStats.multiShotIncrease;
@@ -119,7 +133,7 @@ public class PowerupSystem : MonoBehaviour
                 break;
         }
 
-        switch (powerups[index].nerf)
+        switch (powerups[index].nerf.nerf)
         {
             case Nerf.Knockback:
                 playerShoot.knockBackAmount -= powerupStats.knockbackIncrease;
@@ -154,11 +168,27 @@ public class PowerupSystem : MonoBehaviour
 
 }
 
+[CreateAssetMenu(menuName = "Buff Data Information")]
+public class BuffData : ScriptableObject
+{
+    public Buff buff;
+    public Sprite buffIcon;
+    public Color badgeColor;
+}
+
+[CreateAssetMenu(menuName = "Nerf Data Information")]
+public class NerfData : ScriptableObject
+{
+    public Nerf nerf;
+    public Sprite nerfIcon;
+    public Color badgeColor;
+}
+
 [System.Serializable]
 public struct PowerUp
 {
-    public Buff buff;
-    public Nerf nerf;
+    public BuffData buff;
+    public NerfData nerf;
 }
 
 [CreateAssetMenu(menuName ="Powerup Effect Amounts")]

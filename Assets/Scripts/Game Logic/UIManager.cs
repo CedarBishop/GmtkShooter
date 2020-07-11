@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
         SetUIState(UIState.Pause);
     }
 
-    public void Resume()
+    public void Resume ()
     {
         SetUIState(UIState.Game);
     }
@@ -100,5 +100,37 @@ public class UIManager : MonoBehaviour
     public void Quit ()
     {
         Application.Quit();
+    }
+
+    public void CreateBuffBadge (Color c, Sprite s, float time)
+    {
+        /// Set Colour
+
+        /// Set Sprite
+
+        /// Set Badge Colour
+
+        /// Set Decayed Badge Colour
+
+        /// Start timer
+
+        //// Update Badge Colour Fill Slider to fade away.
+
+    }
+
+    public void CreateNerfBadge(Color c, Sprite s, float time)
+    {
+        /// Set Colour
+
+        /// Set Sprite
+
+        /// Set Badge Colour
+
+        /// Set Decayed Badge Colour
+
+        /// Start timer
+
+        //// Update Badge Colour Fill Slider to fade away.
+
     }
 }

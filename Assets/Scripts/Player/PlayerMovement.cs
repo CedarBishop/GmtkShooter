@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         }
         rigidbody.velocity = direction * movementSpeed * Time.fixedDeltaTime * inverseModifier;
         animator.SetBool("IsMoving", (Mathf.Abs(rigidbody.velocity.x) > 0.25f || Mathf.Abs(rigidbody.velocity.y) > 0.25f));
-        if (rigidbody.velocity.y > 0)
+        if (rigidbody.velocity.x > 0)
         {
             spriteRenderer.flipX = false;
         }

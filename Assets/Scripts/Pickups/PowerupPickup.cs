@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PowerupPickup : Pickup
 {
-    public Buff[] possibleBuffs;
-    public Nerf[] possibleNerfs;
+    public BuffData[] possibleBuffs;
+    public NerfData[] possibleNerfs;
     public float duration;
     
 

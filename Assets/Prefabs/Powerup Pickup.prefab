@@ -229,8 +229,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToLive: 10
-  possibleBuffs: 000000000100000002000000
-  possibleNerfs: 0000000001000000020000000400000005000000
+  possibleBuffs:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 465f27f053f2926458d1bd529a943e65, type: 2}
+  - {fileID: 11400000, guid: cdb66d5495ac27247a93edd763366e46, type: 2}
+  - {fileID: 11400000, guid: 8f77fece2a19a744caa34b4e05cc2627, type: 2}
+  - {fileID: 11400000, guid: acd6061640b33c34eac263492d21302f, type: 2}
+  possibleNerfs:
+  - {fileID: 11400000, guid: 411a37172e9c8d1468eca59fc45a3c47, type: 2}
+  - {fileID: 11400000, guid: f70fbd9b0c67d1f46afe5a489a55ee14, type: 2}
+  - {fileID: 11400000, guid: b7c315d7302b379478db0c510cd0d244, type: 2}
+  - {fileID: 11400000, guid: 9a06cdb5d7bda164baab5cbd5394dcb4, type: 2}
+  - {fileID: 11400000, guid: 348471bd70d0fb64b90b3afb49ca7f02, type: 2}
+  - {fileID: 11400000, guid: d5b2b1823940e7344964f961619157af, type: 2}
+  - {fileID: 11400000, guid: 4a50782eee7af0a47afd9ba4c7306bf5, type: 2}
+  - {fileID: 11400000, guid: cfafdc26444f4914ea778dcbd859263a, type: 2}
   duration: 15
 --- !u!95 &7535240965955641460
 Animator:
@@ -324,7 +337,7 @@ SpriteRenderer:
   m_SortingOrder: -1
   m_Sprite: {fileID: -8424260544424749990, guid: 42f42cdf02c93fc42baa78af49305664,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9811321, g: 0.63403344, b: 0.63403344, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
