@@ -25,7 +25,7 @@ public class AI_MoveToPlayer : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (CheckDistance())
+        if (CheckDistance(attackDistance))
         {
             rigidbody.velocity = Vector2.zero;
             rigidbody.angularVelocity = 0;
@@ -40,11 +40,15 @@ public class AI_MoveToPlayer : StateMachineBehaviour
             rigidbody.velocity = directionToPlayer * ai.movementSpeed * Time.fixedDeltaTime;
         }
 
+        if (CheckDistance(ai.alertDistance) == false)
+        {
+            animator.SetBool("IsHurt", false);
+        }
     }
 
-    bool CheckDistance ()
+    bool CheckDistance(float distance)
     {
-        if (Vector2.Distance(player.transform.position, ai.transform.position) < attackDistance)
+        if (Vector2.Distance(player.transform.position, ai.transform.position) < distance)
         {
             return true;
         }

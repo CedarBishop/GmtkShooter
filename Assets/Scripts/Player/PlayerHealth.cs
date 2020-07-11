@@ -8,7 +8,7 @@ public class PlayerHealth : HealthSystem
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-
+        print("PlayerHealth: Take Damage");
         // Update UI
     }
 

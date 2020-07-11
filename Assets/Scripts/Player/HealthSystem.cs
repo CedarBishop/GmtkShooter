@@ -7,7 +7,7 @@ public class HealthSystem : MonoBehaviour
     public int health;
     private SpriteRenderer spriteRenderer;
     private Material material;
-    private float flashTime;
+    private float flashTime = 0.2f;
 
     private void Start()
     {
@@ -37,8 +37,8 @@ public class HealthSystem : MonoBehaviour
 
     IEnumerator HurtFlash ()
     {
-        material.SetFloat("", 1.0f);
+        material.SetFloat("_IsHurt", 1.0f);
         yield return new WaitForSeconds(flashTime);
-        material.SetFloat("", 1.0f);
+        material.SetFloat("_IsHurt", 0.0f);
     }
 }

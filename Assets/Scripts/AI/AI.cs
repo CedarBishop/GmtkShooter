@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AI : MonoBehaviour
 {
+    public LayerMask playerLayer;
     public int damage;
     public float movementSpeed;
     public float attackCooldown;

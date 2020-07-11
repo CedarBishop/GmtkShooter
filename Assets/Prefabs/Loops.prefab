@@ -112,10 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b10825e30a5c0d741ae1e2bead6c8243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 512
   damage: 1
   movementSpeed: 100
   attackCooldown: 2
-  attackDistance: 2
+  attackDistance: 1
   alertDistance: 10
 --- !u!114 &1807775799167696688
 MonoBehaviour:
