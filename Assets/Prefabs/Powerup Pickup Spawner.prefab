@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup: {fileID: 5420895452561787335, guid: 4b143ef7e83d12a48936c04784962a81, type: 3}
   waveStartsSpawning: 0
-  timeBetweenSpawns: 5
+  timeBetweenSpawns: 2

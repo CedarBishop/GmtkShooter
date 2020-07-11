@@ -47,19 +47,15 @@ public class PowerupSystem : MonoBehaviour
             case Buff.Scale:
                 playerShoot.bulletScale += powerupStats.bulletScaleIncrease;
                 playerShoot.damage += powerupStats.damageIncrease;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Buff.RapidFire:
                 playerShoot.fireRate /= powerupStats.rapidFireMultiplier;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Buff.Lightning:
                 playerShoot.lightningBounceAmount += powerupStats.lightningEnemyCount;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Buff.SunExplode:
                 playerShoot.sunExplodeBulletAmount += powerupStats.sunExplodeBulletIncrease;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             default:
                 break;
@@ -69,34 +65,26 @@ public class PowerupSystem : MonoBehaviour
         {
             case Nerf.Knockback:
                 playerShoot.knockBackAmount += powerupStats.knockbackIncrease;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.Zigzag:
                 playerShoot.redirectAngle += powerupStats.zigzagAngleIncrease;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.Inaccuracy:
                 playerShoot.bulletDeviation += powerupStats.bulletDeviationIncrease;
-                ///UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.HealEnemies:
                 playerShoot.enemyHealAmount += powerupStats.healthToEnemyIncrease;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.MoveToAim:
                 playerMovement.moveToAimReferences++;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.InverseControl:
                 playerMovement.inverseControlReferences++;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.BlurScreen:
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             case Nerf.EnemySpeedUp:
                 playerShoot.enemySpeedupAmount += powerupStats.enemySpeedIncreaseOnHit;
-                //UIManager.instance.CreateBuffBadge(, ,);
                 break;
             default:
                 break;
@@ -168,45 +156,9 @@ public class PowerupSystem : MonoBehaviour
 
 }
 
-[CreateAssetMenu(menuName = "Buff Data Information")]
-public class BuffData : ScriptableObject
-{
-    public Buff buff;
-    public Sprite buffIcon;
-    public Color badgeColor;
-}
-
-[CreateAssetMenu(menuName = "Nerf Data Information")]
-public class NerfData : ScriptableObject
-{
-    public Nerf nerf;
-    public Sprite nerfIcon;
-    public Color badgeColor;
-}
-
 [System.Serializable]
 public struct PowerUp
 {
     public BuffData buff;
     public NerfData nerf;
-}
-
-[CreateAssetMenu(menuName ="Powerup Effect Amounts")]
-public class PowerupStats : ScriptableObject
-{
-    [Header("Buff Amounts")]
-    public int multiShotIncrease;
-    public int bulletScaleIncrease;
-    public float rapidFireMultiplier;
-    public int lightningEnemyCount;
-    public int damageIncrease;
-    public int sunExplodeBulletIncrease;
-
-    [Header("Nerf Amounts")]
-    public float knockbackIncrease;
-    public float knockbackAngleIncrease;
-    public float zigzagAngleIncrease;
-    public float bulletDeviationIncrease;
-    public int healthToEnemyIncrease;
-    public float enemySpeedIncreaseOnHit;
 }

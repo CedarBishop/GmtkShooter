@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 0219844cafb96cb4ca27b6eaa90c61e2, type: 3}
   m_Name: Player_Powerups
   m_EditorClassIdentifier: Assembly-CSharp::PowerupStats
   multiShotIncrease: 1
@@ -22,5 +22,5 @@ MonoBehaviour:
   knockbackAngleIncrease: 20
   zigzagAngleIncrease: 30
   bulletDeviationIncrease: 10
-  healthToEnemyIncrease: 2
+  healthToEnemyIncrease: 1
   enemySpeedIncreaseOnHit: 50

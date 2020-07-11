@@ -47,10 +47,10 @@ MonoBehaviour:
   mainMenuSceneName: MainMenu
   gameSceneName: GameScene
   waveSystem: {fileID: 3277274780619392996}
-  minSpawnX: -10
-  maxSpawnX: 14
-  minSpawnY: -10
-  maxSpawnY: 10
+  minSpawnX: -8
+  maxSpawnX: 12
+  minSpawnY: -8
+  maxSpawnY: 8
 --- !u!114 &3277274780619392996
 MonoBehaviour:
   m_ObjectHideFlags: 0
