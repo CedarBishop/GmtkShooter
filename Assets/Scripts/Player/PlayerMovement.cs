@@ -37,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         {
             direction = playerShoot.gunOriginTransform.right;
         }
-        if (inverseControlReferences > 0 && playerShoot.isHoldingShootButton)
+        if (inverseControlReferences > 0)
         {
             inverseModifier = -1;
         }

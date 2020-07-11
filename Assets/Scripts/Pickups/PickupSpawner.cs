@@ -19,6 +19,14 @@ public class PickupSpawner : MonoBehaviour
         maxX = GameManager.instance.maxSpawnX;
         minY = GameManager.instance.minSpawnY;
         maxY = GameManager.instance.maxSpawnY;
+
+        GameManager.instance.waveSystem.pickupSpawners.Add(this);
+
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.waveSystem.pickupSpawners.Remove(this);
     }
 
     public void StartRound (int roundNumber)

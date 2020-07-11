@@ -14,7 +14,7 @@ public class WaveSystem : MonoBehaviour
 
     public float currentScore;
 
-    public PickupSpawner[] pickupSpawners;
+    [HideInInspector] public List<PickupSpawner> pickupSpawners = new List<PickupSpawner>();
 
     private int aisToBeSpawnedThisRound;
     private int currentAisSpawnedThisRound;
@@ -54,7 +54,6 @@ public class WaveSystem : MonoBehaviour
                 aitypesSpawnedThisRound.Add(ai.ai);
             }
         }
-
 
         StartCoroutine("SpawnAI");
         foreach (var spawner in pickupSpawners)

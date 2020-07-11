@@ -48,7 +48,7 @@ MonoBehaviour:
   gameSceneName: GameScene
   waveSystem: {fileID: 3277274780619392996}
   minSpawnX: -10
-  maxSpawnX: 10
+  maxSpawnX: 14
   minSpawnY: -10
   maxSpawnY: 10
 --- !u!114 &3277274780619392996
