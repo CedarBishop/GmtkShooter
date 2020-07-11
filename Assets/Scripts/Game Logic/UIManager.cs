@@ -19,7 +19,6 @@ public class UIManager : MonoBehaviour
 
     public Text roundText;
 
-
     private void Awake()
     {
         if (instance == null)
@@ -95,6 +94,25 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.GoToMainMenu();
         SetUIState(UIState.MainMenu);
+    }
+
+    public void TogglePause ()
+    {
+        switch (uiState)
+        {
+            case UIState.MainMenu:
+                break;
+            case UIState.Game:
+                Pause();
+                break;
+            case UIState.Pause:
+                Resume();
+                break;
+            case UIState.EndMatch:
+                break;
+            default:
+                break;
+        }
     }
 
     public void Quit ()

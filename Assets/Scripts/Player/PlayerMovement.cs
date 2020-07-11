@@ -31,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
         direction = value.Get<Vector2>().normalized;
     }
 
+    void OnPause ()
+    {
+        UIManager.instance.TogglePause();
+    }
+
     void FixedUpdate()
     {
         if (moveToAimReferences > 0)
