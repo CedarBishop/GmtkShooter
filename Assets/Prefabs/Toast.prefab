@@ -186,7 +186,7 @@ MonoBehaviour:
     m_Bits: 512
   damage: 1
   movementSpeed: 50
-  attackCooldown: 2
+  attackCooldown: 3
   attackDistance: 1
   alertDistance: 5
   patrolTargetDistance: 5

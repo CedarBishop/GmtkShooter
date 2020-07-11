@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6dd523e84823745847b39a309686d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 150
+  movementSpeed: 250
   inverseControlReferences: 0
   moveToAimReferences: 0
 --- !u!114 &7521234865645565529
@@ -349,9 +349,9 @@ MonoBehaviour:
   gunOriginTransform: {fileID: 7831789716283092734}
   bulletPrefab: {fileID: 1733272096102337619, guid: 84a1a1cd72b2aa446971ba63c26f930e,
     type: 3}
-  fireRate: 0.5
-  cameraShakeDuration: 0.1
-  cameraShakeMagnitude: 0.1
+  fireRate: 0.3
+  cameraShakeDuration: 0.07
+  cameraShakeMagnitude: 0.07
   sprayAmount: 10
   damage: 1
   force: 200
@@ -361,7 +361,7 @@ MonoBehaviour:
   bulletScale: 1
   lightningBounceAmount: 0
   sunExplodeBulletAmount: 0
-  knockBackAmount: 3
+  knockBackAmount: 4
   knockbackAngle: 0
   redirectAngle: 0
   redirectTime: 0.3
