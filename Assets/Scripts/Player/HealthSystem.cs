@@ -41,7 +41,7 @@ public class HealthSystem : MonoBehaviour
     {
         //spriteRenderer.color = Color.white;
         //material.SetFloat("_IsHurt", 1.0f);
-        //yield return new WaitForSeconds(flashTime);
+        yield return new WaitForSeconds(flashTime);
         //material.SetFloat("_IsHurt", 0.0f);
         //spriteRenderer.color = originalColor;
     }
