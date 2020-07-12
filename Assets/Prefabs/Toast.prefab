@@ -210,6 +210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  flashes: 2
+  flashTime: 0.2
 --- !u!95 &4776478014947782737
 Animator:
   serializedVersion: 3

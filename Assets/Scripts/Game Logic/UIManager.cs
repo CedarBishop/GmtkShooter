@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     public GameObject pauseUIParent;
     public GameObject endMatchUIParent;
 
+    public LayoutGroup buffTray;
+    public LayoutGroup nerfTray;
+
     public UIState startingUIState = UIState.Game;
     private UIState uiState;
 
@@ -21,8 +24,9 @@ public class UIManager : MonoBehaviour
     public Text scoreText;
     public Text healthText;
     public Text ammoText;
+    public Text timerText;
 
-    public GameObject buffBadge;
+    public BuffBadgeManager buffBadge;
 
     private void Awake()
     {
@@ -44,11 +48,6 @@ public class UIManager : MonoBehaviour
 
     public void SetUIState (UIState state)
     {
-        if (uiState == state)
-        {
-            return;
-        }
-
         uiState = state;
 
         mainMenuUIParent.SetActive(false);
@@ -127,10 +126,10 @@ public class UIManager : MonoBehaviour
 
     public void CreateBuffBadge (Color c, Sprite s, float time)
     {
-        GameObject badge = InstantiateBadge();
+        BuffBadgeManager badge = InstantiateBadge(buffTray);
 
         /// Set timer
-        badge.GetComponent<BuffBadgeManager>().duration = time;
+        badge.duration = time;
 
         /// Set Colour
         badge.transform.GetChild(0).GetComponent<Image>().color = c;
@@ -146,10 +145,10 @@ public class UIManager : MonoBehaviour
 
     public void CreateNerfBadge(Color c, Sprite s, float time)
     {
-        GameObject badge = InstantiateBadge();
+        BuffBadgeManager badge = InstantiateBadge(nerfTray);
 
         /// Set timer
-        badge.GetComponent<BuffBadgeManager>().duration = time;
+        badge.duration = time;
 
         /// Set Colour
         badge.transform.GetChild(0).GetComponent<Image>().color = c;
@@ -162,12 +161,12 @@ public class UIManager : MonoBehaviour
 
     }
 
-    private GameObject InstantiateBadge()
+    private BuffBadgeManager InstantiateBadge(LayoutGroup group)
     {
-        Vector2 spawnPos = new Vector3(Random.Range(0, Screen.width), 100, 0);
-        GameObject temp = Instantiate(buffBadge, transform);
-        temp.GetComponent<RectTransform>().position = spawnPos;
-        return temp;
+        //Vector2 spawnPos = new Vector3(Random.Range(0, Screen.width), 100, 0);
+        BuffBadgeManager badge = Instantiate(buffBadge, group.transform);
+        //temp.GetComponent<RectTransform>().position = spawnPos;
+        return badge;
     }
 
     public void UpdateHealth (int num)
@@ -196,5 +195,10 @@ public class UIManager : MonoBehaviour
         {
             ammoText.text = "Reloading";
         }
+    }
+
+    public void UpdateTimer (float time)
+    {
+        timerText.text = "Time: " + time.ToString("F1");
     }
 }

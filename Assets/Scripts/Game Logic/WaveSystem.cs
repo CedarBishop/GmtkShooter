@@ -72,6 +72,7 @@ public class WaveSystem : MonoBehaviour
             spawner.EndRound();
         }
         aisToBeSpawnedThisRound += extraAISpawnedPerRound;
+        UIManager.instance.roundText.text = "Wave Complete";
         StartCoroutine("DelayBetweenRounds");
     }
 
