@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -601,6 +601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7521234865645565529, guid: 698bd8fdd3188da419234d0c5875ad3f,
+        type: 3}
+      propertyPath: fireRate
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7521234865645565533, guid: 698bd8fdd3188da419234d0c5875ad3f,
         type: 3}
@@ -1391,7 +1396,7 @@ PrefabInstance:
     - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
       propertyPath: extraAISpawnedPerRound
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
@@ -1408,6 +1413,11 @@ PrefabInstance:
         type: 3}
       propertyPath: ais.Array.data[4].roundWhenStartSpawning
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
+        type: 3}
+      propertyPath: roundOneAISpawnAmount
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6406729066066924269, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
