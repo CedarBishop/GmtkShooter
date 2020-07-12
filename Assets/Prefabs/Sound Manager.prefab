@@ -55,7 +55,7 @@ MonoBehaviour:
   - name: SFX_PlayerHit
     clip: {fileID: 8300000, guid: 099a6744fb4931c41977b00491e23dcd, type: 3}
     source: {fileID: 0}
-    volume: 0.75
+    volume: 0.712
   - name: SFX_JamSpawn
     clip: {fileID: 8300000, guid: b259026cb332bad449f9d5a63fb70a83, type: 3}
     source: {fileID: 0}

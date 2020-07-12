@@ -18,7 +18,7 @@ public class WaveSystem : MonoBehaviour
     public int currentScore;
     private int currentKillStreak;
     private float comboTimer;
-    private float timeToLoseCombo = 3;
+    private float timeToLoseCombo = 5;
     private int currentComboMultiplier;
     private Color currentComboColor;
 
