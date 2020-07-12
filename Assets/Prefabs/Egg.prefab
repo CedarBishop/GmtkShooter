@@ -303,7 +303,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 4104690640848077764}
   damage: 1
   movementSpeed: 100
-  attackCooldown: 3
+  attackCooldown: 5
   attackDistance: 10
   alertDistance: 5
   patrolTargetDistance: 5
