@@ -356,8 +356,8 @@ MonoBehaviour:
   sprayAmount: 10
   damage: 1
   force: 400
-  clipSize: 16
-  reloadTime: 2
+  clipSize: 12
+  reloadTime: 1
   controllerAim: {x: 0, y: 0, z: 0}
   isHoldingShootButton: 0
   bulletsPerShot: 1
