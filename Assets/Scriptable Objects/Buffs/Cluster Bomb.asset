@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Cluster Bomb
   m_EditorClassIdentifier: Assembly-CSharp::BuffData
   buff: 4
-  buffIcon: {fileID: 0}
+  buffIcon: {fileID: 21300000, guid: 8979f8bfb58cc9e4badcdd4136454eb2, type: 3}
   badgeColor: {r: 0.525, g: 0.23834999, b: 0.23834999, a: 1}

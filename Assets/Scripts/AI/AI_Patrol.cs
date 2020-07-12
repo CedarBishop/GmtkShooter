@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
 public class AI_Patrol : StateMachineBehaviour
 {
@@ -13,12 +14,14 @@ public class AI_Patrol : StateMachineBehaviour
     private float movementSpeed;
 
 
+
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         player = FindObjectOfType<PlayerHealth>();
         ai = animator.GetComponent<AI>();
         rigidbody = ai.GetComponent<Rigidbody2D>();
-        GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance, ai.patrolTargetDistance, -ai.patrolTargetDistance, ai.patrolTargetDistance);
+        target = GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance + ai.transform.position.x, ai.patrolTargetDistance + ai.transform.position.x,
+            -ai.patrolTargetDistance + ai.transform.position.y, ai.patrolTargetDistance + ai.transform.position.y);
         alertDistance = ai.alertDistance;
         movementSpeed = ai.movementSpeed;
     }
@@ -30,13 +33,15 @@ public class AI_Patrol : StateMachineBehaviour
         {
             animator.SetBool("IsAlert", true);
         }
-        if (CheckDistance(0.01f, target))
+        if (CheckDistance(0.1f, target))
         {
-            GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance, ai.patrolTargetDistance, -ai.patrolTargetDistance, ai.patrolTargetDistance);
+            target = GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance + ai.transform.position.x, ai.patrolTargetDistance + ai.transform.position.x,
+            -ai.patrolTargetDistance + ai.transform.position.y, ai.patrolTargetDistance + ai.transform.position.y);
         }
         else
         {
-            Vector2 direction = (target - new Vector2(ai.transform.position.x, ai.transform.position.y)).normalized;
+            Vector2 pos = new Vector2(ai.transform.position.x, ai.transform.position.y);
+            Vector2 direction = (target - pos).normalized;
             rigidbody.velocity = direction * movementSpeed * Time.fixedDeltaTime;
         }
     }
