@@ -70,7 +70,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillAmount: 0.568
   m_FillClockwise: 0
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
@@ -237,5 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88bf96a627ee3a42ac9137d3b72529c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffColor: {r: 0, g: 0, b: 0, a: 0}
-  buffIcon: {fileID: 0}
+  buffColor: {r: 0.5377358, g: 0.5377358, b: 0.5377358, a: 0}
+  buffIcon: {fileID: 4168957111278539819}
+  duration: 3
