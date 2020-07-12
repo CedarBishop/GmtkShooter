@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
     public Text ammoText;
     public Text timerText;
 
+    public Text gameOverScoreText;
+    public Text gameOverTimeText;
     public BuffBadgeManager buffBadge;
 
     private void Awake()

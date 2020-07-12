@@ -8,6 +8,7 @@ public class PlayerShoot : MonoBehaviour
     public Transform bulletSpawnPoint;
     public Transform gunOriginTransform;
     public Bullet bulletPrefab;
+    public SpriteRenderer gunSprite;
     public float fireRate;
     public float cameraShakeDuration;
     public float cameraShakeMagnitude;
@@ -81,23 +82,32 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    //void FixedUpdate()
-    //{
-    //    if (isHoldingShootButton)
-    //    {
-    //        Shoot();
-    //    }
-    //}
+    void FixedUpdate()
+    {
+        if (gunOriginTransform.rotation.eulerAngles.z < -90 || gunOriginTransform.rotation.eulerAngles.z > 90)
+        {
+            gunSprite.flipY = true;
+        }
+        else
+        {
+            gunSprite.flipY = false;
+        }
 
-    //void OnStartShoot()
-    //{
-    //    isHoldingShootButton = true;
-    //}
+        if (isHoldingShootButton)
+        {
+            OnShoot();
+        }
+    }
 
-    //void OnEndShoot()
-    //{
-    //    isHoldingShootButton = false;
-    //}
+    void OnStartShoot()
+    {
+        isHoldingShootButton = true;
+    }
+
+    void OnEndShoot()
+    {
+        isHoldingShootButton = false;
+    }
 
     void OnReload ()
     {

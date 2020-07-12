@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
     {
         UIManager.instance.SetUIState(UIState.EndMatch);
         inGame = false;
+        UIManager.instance.gameOverScoreText.text = "Score: " + waveSystem.currentScore;
+        UIManager.instance.gameOverTimeText.text = "Time: " + timer.ToString("F1");
     }
 
     public void GoToMainMenu()
