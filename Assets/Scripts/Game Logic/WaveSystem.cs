@@ -12,7 +12,15 @@ public class WaveSystem : MonoBehaviour
     public float timeBetweenSpawns;
     public float timeBetweenRounds;
 
+    public Color[] coloursForComboText;
+
+    public GameObject floatingPoints;
     public int currentScore;
+    private int currentKillStreak;
+    private float comboTimer;
+    private float timeToLoseCombo = 3;
+    private int currentComboMultiplier;
+    private Color currentComboColor;
 
     [HideInInspector] public List<PickupSpawner> pickupSpawners = new List<PickupSpawner>();
 
@@ -20,6 +28,8 @@ public class WaveSystem : MonoBehaviour
     private int currentAisSpawnedThisRound;
     private int aisDiedThisRound;
     private List<AI> aitypesSpawnedThisRound = new List<AI>();
+
+    private PlayerMovement player;
 
     private float minX;
     private float maxX;
@@ -46,6 +56,11 @@ public class WaveSystem : MonoBehaviour
 
     void StartRound ()
     {
+        if (player == null)
+        {
+            player = FindObjectOfType<PlayerMovement>();
+        }
+
         currentAisSpawnedThisRound = 0;
         aitypesSpawnedThisRound.Clear();
         aisDiedThisRound = 0;
@@ -96,15 +111,104 @@ public class WaveSystem : MonoBehaviour
         StartRound();
     }
 
-    public void AIDied (int score)
+    public void AIDied (int score, Vector3 pos)
     {
         aisDiedThisRound++;
-        currentScore += score;
+        currentKillStreak++;
+        comboTimer = timeToLoseCombo;
+        if (currentKillStreak == 5)
+        {
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlaySFX("SFX_Combo1");
+            currentComboMultiplier = 2;
+
+            currentComboColor = coloursForComboText[1];
+            GameObject go = Instantiate(floatingPoints, player.transform.position, Quaternion.identity);
+            TextMesh textMesh = go.transform.GetChild(0).GetComponent<TextMesh>();
+            textMesh.text = "x" + currentComboMultiplier.ToString();
+            textMesh.color = currentComboColor;
+            Destroy(go, 1.0f);
+        }
+        else if (currentKillStreak == 10)
+        {
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlaySFX("SFX_Combo2");
+            currentComboMultiplier = 3;
+
+            currentComboColor = coloursForComboText[2];
+            GameObject go = Instantiate(floatingPoints, player.transform.position, Quaternion.identity);
+            TextMesh textMesh = go.transform.GetChild(0).GetComponent<TextMesh>();
+            textMesh.text = "x" + currentComboMultiplier.ToString();
+            textMesh.color = currentComboColor;
+            Destroy(go, 1.0f);
+        }
+        else if (currentKillStreak == 15)
+        {
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlaySFX("SFX_Combo3");
+            currentComboMultiplier = 4;
+
+            currentComboColor = coloursForComboText[3];
+            GameObject go = Instantiate(floatingPoints, player.transform.position, Quaternion.identity);
+            TextMesh textMesh = go.transform.GetChild(0).GetComponent<TextMesh>();
+            textMesh.text = "x" + currentComboMultiplier.ToString();
+            textMesh.color = currentComboColor;
+            Destroy(go, 1.0f);
+        }
+        else if (currentKillStreak == 20)
+        {
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlaySFX("SFX_Combo4");
+            currentComboMultiplier = 5;
+
+            currentComboColor = coloursForComboText[4];
+            GameObject go = Instantiate(floatingPoints, player.transform.position, Quaternion.identity);
+            TextMesh textMesh = go.transform.GetChild(0).GetComponent<TextMesh>();
+            textMesh.text = "x" + currentComboMultiplier.ToString();
+            textMesh.color = currentComboColor;
+            Destroy(go, 1.0f);
+        }
+        else if (currentKillStreak == 25)
+        {
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlaySFX("SFX_Combo5");
+            currentComboMultiplier = 6;
+
+            currentComboColor = coloursForComboText[5];
+            GameObject go = Instantiate(floatingPoints, player.transform.position, Quaternion.identity);
+            TextMesh textMesh = go.transform.GetChild(0).GetComponent<TextMesh>();
+            textMesh.text = "x" + currentComboMultiplier.ToString();
+            textMesh.color = currentComboColor;
+            Destroy(go, 1.0f);
+        }
+
+        currentScore += (score * currentComboMultiplier);
+
+
+        GameObject go2 = Instantiate(floatingPoints, pos, Quaternion.identity);
+        TextMesh textMesh2 = go2.transform.GetChild(0).GetComponent<TextMesh>();
+        textMesh2.color = currentComboColor;
+        textMesh2.text = "+" + (score * currentComboMultiplier).ToString();
+        Destroy(go2, 1.0f);
 
         UIManager.instance.UpdateScore(currentScore);
         if (aisDiedThisRound >= aisToBeSpawnedThisRound)
         {
             EndRound();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (comboTimer <= 0)
+        {
+            currentKillStreak = 0;
+            currentComboMultiplier = 1;
+            currentComboColor = coloursForComboText[0];
+        }
+        else
+        {
+            comboTimer -= Time.fixedDeltaTime;
         }
     }
 }

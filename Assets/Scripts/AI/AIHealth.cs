@@ -6,7 +6,6 @@ public class AIHealth : HealthSystem
 {
     private AI ai;
     private int score;
-    public GameObject floatingPoints;
 
     public override void TakeDamage(int damage)
     {
@@ -20,11 +19,7 @@ public class AIHealth : HealthSystem
     {
         ai = GetComponent<AI>();
         score = ai.score;
-        GameObject go = Instantiate(floatingPoints, transform.position, Quaternion.identity);
-        TextMesh textMesh = go.transform.GetChild(0).GetComponent<TextMesh>();
-        textMesh.text = "+" + score.ToString();
-        Destroy(go,1.0f);
-        GameManager.instance.waveSystem.AIDied(score);
+        GameManager.instance.waveSystem.AIDied(score, transform.position);
         base.Death();
 
         if (SoundManager.instance != null)
