@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioClip mainMenuMusic;
     [SerializeField] private AudioClip gameMusic;
+    [SerializeField] private AudioClip introMusic;
 
     [SerializeField]
     Sound[] sounds;
@@ -128,10 +129,22 @@ public class SoundManager : MonoBehaviour
         {
             if (gameMusic != null)
             {
-                musicAudioSource.clip = gameMusic;
+                musicAudioSource.clip = introMusic;
                 musicAudioSource.Play();
+                StartCoroutine("IntroToMain");
             }
         }
+    }
+
+    IEnumerator IntroToMain ()
+    {
+        yield return new WaitForSeconds(12.0f);
+        if (musicAudioSource.clip == introMusic)
+        {
+            musicAudioSource.clip = gameMusic;
+            musicAudioSource.Play();
+        }
+
     }
 
     public void StopMusic()
