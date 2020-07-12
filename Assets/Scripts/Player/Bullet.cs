@@ -68,36 +68,37 @@ public class Bullet : MonoBehaviour
         if (collision.GetComponent<AIHealth>())
         {
             collision.GetComponent<AIHealth>().TakeDamage(damage);
-            if (enemySpeedUpAmount > 0)
-            {
-                collision.GetComponent<AI>().movementSpeed += enemySpeedUpAmount;
-            }
-            if (enemyHealAmount > 0)
-            {
-                collision.GetComponent<AIHealth>().Heal(enemyHealAmount);
-            }
-            if (lightningCount > 0)
-            {
-                Collider2D collider = Physics2D.OverlapCircle(transform.position, 3, enemyLayer);
-                if (collider != null)
-                {
-                    Vector2 direction = (collider.transform.position - transform.position).normalized;
-                    transform.right = direction;
-                    lightningCount--;
-                }
-            }            
-            if (explosionProjectileCount > 0)
-            {
-                for (int i = 0; i < explosionProjectileCount; i++)
-                {
-                    Bullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0,0, Random.Range(0, 359.9f)));
-                    bullet.Initialise(damage, force, redirectAngle, redirectTime,0,0,0, enemyHealAmount,enemySpeedUpAmount);
-                }
-            }
-            if (explosionProjectileCount <= 0 && lightningCount <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
+            //if (enemySpeedUpAmount > 0)
+            //{
+            //    collision.GetComponent<AI>().movementSpeed += enemySpeedUpAmount;
+            //}
+            //if (enemyHealAmount > 0)
+            //{
+            //    collision.GetComponent<AIHealth>().Heal(enemyHealAmount);
+            //}
+            //if (lightningCount > 0)
+            //{
+            //    Collider2D collider = Physics2D.OverlapCircle(transform.position, 3, enemyLayer);
+            //    if (collider != null)
+            //    {
+            //        Vector2 direction = (collider.transform.position - transform.position).normalized;
+            //        transform.right = direction;
+            //        lightningCount--;
+            //    }
+            //}            
+            //if (explosionProjectileCount > 0)
+            //{
+            //    for (int i = 0; i < explosionProjectileCount; i++)
+            //    {
+            //        Bullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0,0, Random.Range(0, 359.9f)));
+            //        bullet.Initialise(damage, force, redirectAngle, redirectTime,0,0,0, enemyHealAmount,enemySpeedUpAmount);
+            //    }
+            //}
+            //if (explosionProjectileCount <= 0 && lightningCount <= 0)
+            //{
+            //    Destroy(gameObject);
+            //}
         }
     }
 }
