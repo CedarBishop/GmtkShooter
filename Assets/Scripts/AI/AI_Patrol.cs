@@ -13,6 +13,9 @@ public class AI_Patrol : StateMachineBehaviour
     private Vector2 target;
     private float movementSpeed;
 
+    private float timer;
+    private float timeToResetTarget = 10;
+
 
 
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -20,8 +23,7 @@ public class AI_Patrol : StateMachineBehaviour
         player = FindObjectOfType<PlayerHealth>();
         ai = animator.GetComponent<AI>();
         rigidbody = ai.GetComponent<Rigidbody2D>();
-        target = GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance + ai.transform.position.x, ai.patrolTargetDistance + ai.transform.position.x,
-            -ai.patrolTargetDistance + ai.transform.position.y, ai.patrolTargetDistance + ai.transform.position.y);
+        SetTarget();
         alertDistance = ai.alertDistance;
         movementSpeed = ai.movementSpeed;
     }
@@ -35,14 +37,17 @@ public class AI_Patrol : StateMachineBehaviour
         }
         if (CheckDistance(0.1f, target))
         {
-            target = GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance + ai.transform.position.x, ai.patrolTargetDistance + ai.transform.position.x,
-            -ai.patrolTargetDistance + ai.transform.position.y, ai.patrolTargetDistance + ai.transform.position.y);
+            SetTarget();
         }
         else
         {
             Vector2 pos = new Vector2(ai.transform.position.x, ai.transform.position.y);
             Vector2 direction = (target - pos).normalized;
             rigidbody.velocity = direction * movementSpeed * Time.fixedDeltaTime;
+            if (TargetTimer())
+            {
+                SetTarget();
+            }
         }
     }
 
@@ -53,6 +58,25 @@ public class AI_Patrol : StateMachineBehaviour
             return true;
         }
         return false;
-    }    
-    
+    }
+
+    bool TargetTimer()
+    {
+        if (timer <= 0.0f)
+        {
+            return true;
+        }
+        else
+        {
+            timer -= Time.fixedDeltaTime;
+            return false;
+        }
+    }
+
+    void SetTarget ()
+    {
+        target = GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance + ai.transform.position.x, ai.patrolTargetDistance + ai.transform.position.x,
+            -ai.patrolTargetDistance + ai.transform.position.y, ai.patrolTargetDistance + ai.transform.position.y);
+        timer = timeToResetTarget;
+    }
 }
