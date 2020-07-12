@@ -208,8 +208,10 @@ public class PlayerShoot : MonoBehaviour
 
     IEnumerator DelayShoot ()
     {
+        gunAnimator.SetBool("Shooting", true);
         canShoot = false;
         yield return new WaitForSeconds(fireRate);
         canShoot = true;
+        gunAnimator.SetBool("Shooting", false);
     }
 }
