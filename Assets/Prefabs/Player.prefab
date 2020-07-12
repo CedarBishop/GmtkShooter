@@ -123,6 +123,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7521234865620420069}
   - component: {fileID: 7521234865620420068}
+  - component: {fileID: 6298380974940169104}
   m_Layer: 9
   m_Name: GunSprite
   m_TagString: Untagged
@@ -195,6 +196,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6298380974940169104
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7521234865620420066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d9e57610758c7f6438b409580af846d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7521234865645565524
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +393,7 @@ MonoBehaviour:
   bulletDeviation: 0
   enemyHealAmount: 0
   enemySpeedupAmount: 0
+  gunAnimator: {fileID: 6298380974940169104}
 --- !u!58 &7521234865645565526
 CircleCollider2D:
   m_ObjectHideFlags: 0

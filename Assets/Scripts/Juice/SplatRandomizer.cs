@@ -10,7 +10,8 @@ public class SplatRandomizer : MonoBehaviour
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = splats[Random.Range(0, splats.Length - 1)];
-        int temp = (int)Random.Range(0, 2);
+        int temp = (int)Random.Range(0, 2);     
         GetComponent<SpriteRenderer>().flipY = (temp == 0) ? false : true;
+       // float splatSize = Random.Range(0.8f, 1.1f);
     }
 }
