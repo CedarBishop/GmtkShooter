@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: bbaece6b19d1f7b4aa68cf8c1201cd9f
 TextureImporter:
   internalIDToNameTable:
@@ -17,11 +18,20 @@ TextureImporter:
   - first:
       213: 2351213703707656756
     second: Fried Egg_4
+=======
+guid: 27b2498e5b6a7824186d9082cc2e74dc
+TextureImporter:
+  internalIDToNameTable: []
+>>>>>>> 9c544ee651c962f055c7939cc9d92534b97d191c
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
+<<<<<<< HEAD
     enableMipMap: 0
+=======
+    enableMipMap: 1
+>>>>>>> 9c544ee651c962f055c7939cc9d92534b97d191c
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -46,6 +56,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< HEAD
     filterMode: 0
     aniso: 2
     mipBias: -100
@@ -56,10 +67,23 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
+=======
+    filterMode: -1
+    aniso: 2
+    mipBias: -100
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+>>>>>>> 9c544ee651c962f055c7939cc9d92534b97d191c
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -67,6 +91,15 @@ TextureImporter:
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
+=======
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+>>>>>>> 9c544ee651c962f055c7939cc9d92534b97d191c
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -79,7 +112,11 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
     textureCompression: 0
+=======
+    textureCompression: 1
+>>>>>>> 9c544ee651c962f055c7939cc9d92534b97d191c
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -91,7 +128,11 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
+<<<<<<< HEAD
     textureCompression: 0
+=======
+    textureCompression: 1
+>>>>>>> 9c544ee651c962f055c7939cc9d92534b97d191c
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,6 +175,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 8192
@@ -258,6 +300,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+>>>>>>> 9c544ee651c962f055c7939cc9d92534b97d191c
     internalID: 0
     vertices: []
     indices: 
