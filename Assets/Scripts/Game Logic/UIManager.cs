@@ -55,8 +55,14 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         SetUIState(startingUIState);
-       // musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
-       // sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1.0f);
+        StartCoroutine("DelayedStart");
+    }
+
+    IEnumerator DelayStart ()
+    {
+        yield return new WaitForSeconds(0.25f);
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
+        sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1.0f);
     }
 
     public void SetUIState (UIState state)

@@ -77,6 +77,12 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
+        if (collision.CompareTag("Environment"))
+        {
+            Destroy(gameObject);
+            SpawnSplat();
+
+        }
         if (collision.GetComponent<AIHealth>())
         {
             collision.GetComponent<AIHealth>().TakeDamage(damage);
