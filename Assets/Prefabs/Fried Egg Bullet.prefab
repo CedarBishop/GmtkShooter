@@ -181,6 +181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToLive: 10
   shadow: {fileID: 2792743917150858994}
+  eggEffect: {fileID: 5075359225458795682, guid: 1fb3d3831578fef468aa41e250694d7a,
+    type: 3}
 --- !u!1 &2463238668753300577
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class AI_Bullet : MonoBehaviour
     public Shadow shadow;
     private Rigidbody2D rigidbody;
 
+    public GameObject eggEffect;
+
     private int damage;
     private float force;
 
@@ -42,6 +44,7 @@ public class AI_Bullet : MonoBehaviour
         if (collision.GetComponent<PlayerHealth>())
         {
             collision.GetComponent<PlayerHealth>().TakeDamage(damage);
+            Instantiate(eggEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -49,6 +52,7 @@ public class AI_Bullet : MonoBehaviour
     IEnumerator DestroySelf()
     {
         yield return new WaitForSeconds(timeToLive);
+        Instantiate(eggEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }
