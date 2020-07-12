@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4572,3 +4572,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3709c7658e3fff34ebf237b07394b9ca, type: 3}
+--- !u!1001 &7209175099436650924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.9867549
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.16221873
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -161.329
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597620126005352427, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8983330594167865350, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+        type: 3}
+      propertyPath: m_Name
+      value: Smoke Particle System
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c9b71fe8a7e996b43927897b0cfac5c7, type: 3}
