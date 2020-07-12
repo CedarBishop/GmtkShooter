@@ -350,7 +350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6dd523e84823745847b39a309686d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 250
+  movementSpeed: 200
   knockbackTime: 0.1
   inverseControlReferences: 0
   moveToAimReferences: 0
@@ -373,7 +373,7 @@ MonoBehaviour:
   gunSprite: {fileID: 7521234865620420068}
   fireRate: 0.1
   cameraShakeDuration: 0.3
-  cameraShakeMagnitude: 1
+  cameraShakeMagnitude: 0.65
   sprayAmount: 10
   damage: 1
   force: 400
