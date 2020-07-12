@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f1ff419b4f9d546844418259233921, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup: {fileID: 5420895452561787335, guid: 523dbac7b1314f04ab92a7923e0a1543, type: 3}
+  pickup: {fileID: 5420895452561787335, guid: 4b143ef7e83d12a48936c04784962a81, type: 3}
   waveStartsSpawning: 0
   timeBetweenSpawns: 2
