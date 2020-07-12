@@ -63,6 +63,9 @@ public class WaveSystem : MonoBehaviour
             spawner.StartRound(roundNumber);
         }
         UIManager.instance.UpdateWave(roundNumber);
+
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_WaveSpawn");
     }
 
     void EndRound ()

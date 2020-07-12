@@ -179,7 +179,6 @@ public class Sound
     public string name;
     public AudioClip clip;
     [HideInInspector] public AudioSource source;
-    [Range(-3.0f, 3.0f)] public float pitch = 1;
     [Range(0.0f, 1.0f)] public float volume = 1;
 
 
@@ -187,7 +186,6 @@ public class Sound
     {
         source = _source;
         source.clip = clip;
-        source.pitch = pitch;
     }
 
 
@@ -198,6 +196,7 @@ public class Sound
         {
             return;
         }
+        source.pitch = Random.Range(0.95f, 1.05f);
 
         source.Play();
 

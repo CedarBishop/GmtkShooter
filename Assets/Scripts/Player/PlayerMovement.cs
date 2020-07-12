@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -6,9 +7,11 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed;
-    
+    public float knockbackTime;
+
     [HideInInspector]public int inverseControlReferences;
     [HideInInspector]public int moveToAimReferences;
+
 
     private PlayerShoot playerShoot;
     private Rigidbody2D rigidbody;
@@ -17,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction;
     private float inverseModifier;
 
+    private float knockbackForce;
+    private Vector2 knockbackDirection;
 
     void Start()
     {
@@ -40,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (moveToAimReferences > 0)
         {
-            direction = playerShoot.gunOriginTransform.right;
+            rigidbody.AddForce((playerShoot.gunOriginTransform.right) * moveToAimReferences * 100);
         }
         if (inverseControlReferences > 0)
         {
@@ -60,11 +65,23 @@ public class PlayerMovement : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+
+        if (knockbackForce > 0)
+        {
+            rigidbody.AddForce(knockbackForce * knockbackDirection);
+        }
     }
 
     public void Knockback(Vector2 direction, float magnitude)
     {
-        Vector2 reverseDirection = new Vector2(direction.x * -1, direction.y * -1);
-        rigidbody.AddForce(reverseDirection * magnitude);
+        knockbackDirection = new Vector2(direction.x * -1, direction.y * -1);
+        knockbackForce = magnitude;
+        StartCoroutine("CoKnockback");
+    }
+
+    IEnumerator CoKnockback ()
+    {
+        yield return new WaitForSeconds(knockbackTime);
+        knockbackForce = 0;
     }
 }

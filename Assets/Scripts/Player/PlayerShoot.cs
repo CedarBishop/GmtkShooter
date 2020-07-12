@@ -111,6 +111,9 @@ public class PlayerShoot : MonoBehaviour
     {
         ammo = 0;
         UIManager.instance.UpdateAmmo(ammo);
+
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_Reload");
         isReloading = true;
         yield return new WaitForSeconds(reloadTime);
         ammo = clipSize;
@@ -162,8 +165,11 @@ public class PlayerShoot : MonoBehaviour
         }
 
         ammo--;
+        if (UIManager.instance != null)
+            UIManager.instance.UpdateAmmo(ammo);
 
-        UIManager.instance.UpdateAmmo(ammo);
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_PlayerShoot");
 
         if (ammo <= 0)
         {

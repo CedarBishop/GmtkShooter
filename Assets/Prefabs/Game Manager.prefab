@@ -74,7 +74,7 @@ MonoBehaviour:
   - ai: {fileID: 4584077119857896133, guid: 3267421a5624b874d92896fcbc5846cf, type: 3}
     roundWhenStartSpawning: 3
   - ai: {fileID: 4584077119857896133, guid: 505a00e3122de3d4f8627ea3bc40e903, type: 3}
-    roundWhenStartSpawning: 1
+    roundWhenStartSpawning: 4
   roundNumber: 0
   extraAISpawnedPerRound: 5
   roundOneAISpawnAmount: 5

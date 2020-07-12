@@ -331,6 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 250
+  knockbackTime: 0.1
   inverseControlReferences: 0
   moveToAimReferences: 0
 --- !u!114 &7521234865645565529
@@ -363,7 +364,7 @@ MonoBehaviour:
   bulletScale: 1
   lightningBounceAmount: 0
   sunExplodeBulletAmount: 0
-  knockBackAmount: 4
+  knockBackAmount: 100
   knockbackAngle: 0
   redirectAngle: 0
   maximumRedirectAngle: 90

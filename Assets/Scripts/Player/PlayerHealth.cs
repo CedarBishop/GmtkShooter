@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.WSA.Input;
 
 public class PlayerHealth : HealthSystem
 {
@@ -17,7 +16,8 @@ public class PlayerHealth : HealthSystem
         base.TakeDamage(damage);
         print("PlayerHealth: Take Damage");
         // Update UI
-
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_PlayerHit");
         UIManager.instance.UpdateHealth(health);
     }
 

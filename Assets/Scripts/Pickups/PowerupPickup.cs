@@ -7,7 +7,7 @@ public class PowerupPickup : Pickup
     public BuffData[] possibleBuffs;
     public NerfData[] possibleNerfs;
     public float duration;
-    
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
