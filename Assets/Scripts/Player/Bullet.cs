@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     private float force;
     private int damage;
     public Shadow shadow;
+    public GameObject floorSplat;
+    public float splatYScale = 0.15f;
 
     private Rigidbody2D rigidbody;
     private float redirectAngle;
@@ -50,6 +52,9 @@ public class Bullet : MonoBehaviour
     IEnumerator DestroySelf () 
     {
         yield return new WaitForSeconds(timeToLive);
+        float splatSize = Random.Range(0.8f, 1.1f);
+        GameObject splat = Instantiate(floorSplat, transform.position, Quaternion.identity);
+        splat.transform.localScale.Set(splatSize, splatSize - 0.15f, 1);
         Destroy(gameObject);
     }
 
@@ -74,6 +79,8 @@ public class Bullet : MonoBehaviour
             {
                 collision.GetComponent<AI>().movementSpeed += enemySpeedUpAmount;
             }
+
+            Instantiate(floorSplat, transform.position, Quaternion.identity);
             Destroy(gameObject);
 
             //if (lightningCount > 0)
