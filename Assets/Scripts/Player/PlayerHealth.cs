@@ -9,6 +9,7 @@ public class PlayerHealth : HealthSystem
     protected override void Start()
     {
         UIManager.instance.UpdateHealth(health);
+        base.Start();
     }
 
     public override void TakeDamage(int damage)
