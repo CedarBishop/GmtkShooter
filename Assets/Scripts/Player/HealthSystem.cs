@@ -48,7 +48,7 @@ public class HealthSystem : MonoBehaviour
     protected virtual void Death ()
     {
         isDead = true;
-        Destroy(gameObject,0.5f);
+        Destroy(gameObject,0.1f);
     }
 
     IEnumerator HurtFlash ()

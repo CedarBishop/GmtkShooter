@@ -6,6 +6,7 @@ public class AIHealth : HealthSystem
 {
     private AI ai;
     private int score;
+    public GameObject deathEffect;
 
     public override void TakeDamage(int damage)
     {
@@ -20,6 +21,7 @@ public class AIHealth : HealthSystem
         ai = GetComponent<AI>();
         score = ai.score;
         GameManager.instance.waveSystem.AIDied(score, transform.position);
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         base.Death();
 
         if (SoundManager.instance != null)

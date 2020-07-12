@@ -480,6 +480,8 @@ MonoBehaviour:
   health: 5
   flashes: 5
   flashTime: 0.2
+  deathEffect: {fileID: 8983330594167865350, guid: c9b71fe8a7e996b43927897b0cfac5c7,
+    type: 3}
 --- !u!1 &7521234866317753857
 GameObject:
   m_ObjectHideFlags: 0
