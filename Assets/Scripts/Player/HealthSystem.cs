@@ -11,7 +11,7 @@ public class HealthSystem : MonoBehaviour
     private float flashTime = 0.2f;
     private Color originalColor;
 
-    private void Start()
+    protected virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         material = spriteRenderer.material;

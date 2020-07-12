@@ -18,6 +18,9 @@ public class UIManager : MonoBehaviour
     private UIState uiState;
 
     public Text roundText;
+    public Text scoreText;
+    public Text healthText;
+    public Text ammoText;
 
     public GameObject buffBadge;
 
@@ -165,5 +168,33 @@ public class UIManager : MonoBehaviour
         GameObject temp = Instantiate(buffBadge, transform);
         temp.GetComponent<RectTransform>().position = spawnPos;
         return temp;
+    }
+
+    public void UpdateHealth (int num)
+    {
+        healthText.text = "Health: " + num;
+    }
+
+    public void UpdateWave(int num)
+    {
+        roundText.text = "Wave: " + num;
+        if (num <= 0)
+        {
+            roundText.text = "";
+        }
+    }
+
+    public void UpdateScore (int num)
+    {
+        scoreText.text = "Score: " + num;
+    }
+
+    public void UpdateAmmo (int num)
+    {
+        ammoText.text = "Ammo: " + num;
+        if (num <= 0)
+        {
+            ammoText.text = "Reloading";
+        }
     }
 }

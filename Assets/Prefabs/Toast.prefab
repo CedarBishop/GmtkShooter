@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 4776478014947782737}
   - component: {fileID: 836107402387500425}
   - component: {fileID: 2096110711781507317}
+  - component: {fileID: 2481611168407899662}
   m_Layer: 8
   m_Name: Toast
   m_TagString: Untagged
@@ -188,9 +189,9 @@ MonoBehaviour:
   movementSpeed: 50
   attackCooldown: 3
   attackDistance: 1
-  alertDistance: 5
-  patrolTargetDistance: 5
-  score: 0
+  alertDistance: 2.5
+  patrolTargetDistance: 8
+  score: 25
 --- !u!114 &1807775799167696688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb771bce40f759a4596254eba18b2e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 5
 --- !u!95 &4776478014947782737
 Animator:
   serializedVersion: 3
@@ -260,3 +261,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &2481611168407899662
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6188542974064808973}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0

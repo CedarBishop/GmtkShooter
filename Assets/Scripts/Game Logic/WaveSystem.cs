@@ -12,7 +12,7 @@ public class WaveSystem : MonoBehaviour
     public float timeBetweenSpawns;
     public float timeBetweenRounds;
 
-    public float currentScore;
+    public int currentScore;
 
     [HideInInspector] public List<PickupSpawner> pickupSpawners = new List<PickupSpawner>();
 
@@ -38,7 +38,9 @@ public class WaveSystem : MonoBehaviour
     {
         aisToBeSpawnedThisRound = roundOneAISpawnAmount;
         roundNumber = 0;
+        UIManager.instance.UpdateWave(roundNumber);
         currentScore = 0;
+        UIManager.instance.UpdateScore(currentScore);
         StartCoroutine("DelayBetweenRounds");    
     }
 
@@ -60,7 +62,7 @@ public class WaveSystem : MonoBehaviour
         {
             spawner.StartRound(roundNumber);
         }
-        UIManager.instance.roundText.text = "Round: " + roundNumber;
+        UIManager.instance.UpdateWave(roundNumber);
     }
 
     void EndRound ()
@@ -95,6 +97,7 @@ public class WaveSystem : MonoBehaviour
         aisDiedThisRound++;
         currentScore += score;
 
+        UIManager.instance.UpdateScore(currentScore);
         if (aisDiedThisRound >= aisToBeSpawnedThisRound)
         {
             EndRound();
