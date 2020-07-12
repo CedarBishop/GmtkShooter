@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ab8803b5c1a1d49bad63af871808fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 15
   possibleBuffs:
   - {fileID: 11400000, guid: c98d80aaf3c00764abd7f146d866175a, type: 2}
   - {fileID: 11400000, guid: 465f27f053f2926458d1bd529a943e65, type: 2}

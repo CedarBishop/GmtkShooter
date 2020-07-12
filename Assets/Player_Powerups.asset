@@ -24,4 +24,4 @@ MonoBehaviour:
   zigzagAngleIncrease: 50
   bulletDeviationIncrease: 30
   healthToEnemyIncrease: 1
-  enemySpeedIncreaseOnHit: 25
+  enemySpeedIncreaseOnHit: 5

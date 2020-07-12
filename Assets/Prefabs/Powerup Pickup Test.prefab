@@ -228,11 +228,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ab8803b5c1a1d49bad63af871808fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToLive: 10
+  timeToLive: 15
   possibleBuffs:
-  - {fileID: 11400000, guid: acd6061640b33c34eac263492d21302f, type: 2}
+  - {fileID: 11400000, guid: cdb66d5495ac27247a93edd763366e46, type: 2}
   possibleNerfs:
-  - {fileID: 11400000, guid: d5b2b1823940e7344964f961619157af, type: 2}
+  - {fileID: 11400000, guid: 348471bd70d0fb64b90b3afb49ca7f02, type: 2}
   duration: 15
 --- !u!95 &7535240965955641460
 Animator:
