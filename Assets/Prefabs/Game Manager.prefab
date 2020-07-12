@@ -52,8 +52,8 @@ MonoBehaviour:
     m_Bits: 1024
   minSpawnX: -12
   maxSpawnX: 12
-  minSpawnY: -9.5
-  maxSpawnY: 9.5
+  minSpawnY: -9
+  maxSpawnY: 10
 --- !u!114 &3277274780619392996
 MonoBehaviour:
   m_ObjectHideFlags: 0
