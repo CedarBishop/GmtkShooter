@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9071714146644766237}
   - component: {fileID: 6923972122246362223}
+  - component: {fileID: 194780919632546454}
   m_Layer: 0
   m_Name: Sound Manager
   m_TagString: Untagged
@@ -46,103 +47,179 @@ MonoBehaviour:
   mainMenuMusic: {fileID: 0}
   gameMusic: {fileID: 0}
   sounds:
-  - name: SFX_PlayerShot
+  - name: SFX_PlayerShoot
     clip: {fileID: 8300000, guid: 91f509df82141e04e8c9fde34d71b3b6, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 1
   - name: SFX_PlayerHit
     clip: {fileID: 8300000, guid: 099a6744fb4931c41977b00491e23dcd, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_JamSpawn
     clip: {fileID: 8300000, guid: b259026cb332bad449f9d5a63fb70a83, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_PickUp
     clip: {fileID: 8300000, guid: 01549cbcf097c9146ba017538a35ed58, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_WornOff
     clip: {fileID: 8300000, guid: 27e5896d8ce3bd14f8a4826a5693201e, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_Reload
     clip: {fileID: 8300000, guid: 83ac64c4c10740d40baae54d2613c315, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_WaveSpawn
     clip: {fileID: 8300000, guid: 0b2e2b4cc59d3aa4a8d17ca73c8908b0, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_WaveCleared
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_EnemyHit
     clip: {fileID: 8300000, guid: 13cd4582a47e7d04bb00a509c0c1a899, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_Melee
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_EggShot
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_SpeedUp
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_EnemyDeath
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_Combo1
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_Combo2
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_Combo3
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_ButtonClick
     clip: {fileID: 8300000, guid: fbf29977869f9a34e96a5b35d2617914, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_ButtonRelease
     clip: {fileID: 8300000, guid: fd7bb232d0f82884fa9bd2af6b552497, type: 3}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_GameOver
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
   - name: SFX_StartButton
     clip: {fileID: 0}
     source: {fileID: 0}
-    pitch: 0
     volume: 0
+--- !u!82 &194780919632546454
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807880195970046811}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

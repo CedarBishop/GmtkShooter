@@ -8,6 +8,14 @@ public class AIHealth : HealthSystem
     private int score;
     public GameObject floatingPoints;
 
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_EnemyHit");
+    }
+
     protected override void Death()
     {
         ai = GetComponent<AI>();

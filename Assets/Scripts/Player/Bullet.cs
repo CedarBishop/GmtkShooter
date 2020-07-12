@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     public LayerMask enemyLayer;
     private float force;
     private int damage;
+    public Shadow shadow;
 
     private Rigidbody2D rigidbody;
     private float redirectAngle;
@@ -21,6 +22,7 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        shadow.transform.parent = null;
     }
 
     public void Initialise (int Damage, float Force, float RedirectAngle, float RedirectTime, float BulletDeviation, int LightningCount, int ExplosionProjectileCount, int EnemyHealAmount, float EnemySpeedupAmount)

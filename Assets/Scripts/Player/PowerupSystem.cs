@@ -90,6 +90,8 @@ public class PowerupSystem : MonoBehaviour
                 break;
         }
 
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_PickUp");
 
         powerups.Add(powerUp);
         powerupTimers.Add(timeLastsfor);
@@ -149,6 +151,9 @@ public class PowerupSystem : MonoBehaviour
             default:
                 break;
         }
+
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_WornOff");
 
         powerups.RemoveAt(index);
         powerupTimers.RemoveAt(index);

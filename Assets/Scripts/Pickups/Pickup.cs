@@ -9,6 +9,8 @@ public class Pickup : MonoBehaviour
     void Start()
     {
         StartCoroutine("DestroySelf");
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_JamSpawn");
     }
 
     IEnumerator DestroySelf()

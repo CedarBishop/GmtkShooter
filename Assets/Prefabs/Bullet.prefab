@@ -52,6 +52,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  shadow: {fileID: 8386827832655413888}
 --- !u!58 &1733272096102337616
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -99,6 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5048716669756082668}
   - component: {fileID: 7660906841709126750}
+  - component: {fileID: 8386827832655413888}
   m_Layer: 0
   m_Name: Shadow Texture
   m_TagString: Untagged
@@ -170,6 +172,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8386827832655413888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2639888774546414377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1415c9f926f41f749a3ee451620df5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1733272096102337629}
 --- !u!1 &3764337899818344781
 GameObject:
   m_ObjectHideFlags: 0
