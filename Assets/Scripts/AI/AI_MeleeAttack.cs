@@ -20,6 +20,8 @@ public class AI_MeleeAttack : StateMachineBehaviour
         if (Physics2D.OverlapCircle(ai.transform.position + new Vector3(directionToPlayer.x * 0.5f , directionToPlayer.y * 0.5f, 0), ai.attackDistance, ai.playerLayer))
         {
             playerHealth.TakeDamage(ai.damage);
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlaySFX("SFX_Melee");
         }
     }
 }
