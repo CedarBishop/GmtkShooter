@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerHealth : HealthSystem
 {
+
+    public GameObject deathEffect;
+
     protected override void Start()
     {
         UIManager.instance.UpdateHealth(health);
@@ -26,6 +29,8 @@ public class PlayerHealth : HealthSystem
 
     protected override void Death ()
     {
+
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         base.Death();
         GameManager.instance.GameOver();
     }

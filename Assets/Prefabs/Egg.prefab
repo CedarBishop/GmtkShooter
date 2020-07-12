@@ -325,7 +325,7 @@ MonoBehaviour:
   health: 3
   flashes: 2
   flashTime: 0.2
-  floatingPoints: {fileID: 5930931179530635789, guid: 08eced2a88f39ec4fa09cf24193bb1a9,
+  deathEffect: {fileID: 5075359225458795682, guid: 1fb3d3831578fef468aa41e250694d7a,
     type: 3}
 --- !u!95 &4776478014947782737
 Animator:
