@@ -212,7 +212,7 @@ MonoBehaviour:
   health: 5
   flashes: 2
   flashTime: 0.2
-  floatingPoints: {fileID: 5462955483026354630, guid: b338af415630fda479162a0a811fecdc,
+  floatingPoints: {fileID: 5930931179530635789, guid: 08eced2a88f39ec4fa09cf24193bb1a9,
     type: 3}
 --- !u!95 &4776478014947782737
 Animator:

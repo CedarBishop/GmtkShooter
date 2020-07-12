@@ -20,8 +20,10 @@ public class AIHealth : HealthSystem
     {
         ai = GetComponent<AI>();
         score = ai.score;
-        floatingPoints.transform.GetChild(0).GetComponent<TextMesh>().text = "+" + score.ToString();
-        Instantiate(floatingPoints, transform.position, Quaternion.identity);
+        GameObject go = Instantiate(floatingPoints, transform.position, Quaternion.identity);
+        TextMesh textMesh = go.transform.GetChild(0).GetComponent<TextMesh>();
+        textMesh.text = "+" + score.ToString();
+        Destroy(go,1.0f);
         GameManager.instance.waveSystem.AIDied(score);
         base.Death();
     }
