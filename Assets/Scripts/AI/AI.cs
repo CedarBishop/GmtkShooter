@@ -5,12 +5,17 @@ using UnityEngine;
 public class AI : MonoBehaviour
 {
     public LayerMask playerLayer;
+    public AI_Bullet bulletPrefab;
+    public Transform aimOriginTransform;
+    public Transform bulletSpawnPoint;
     public int damage;
     public float movementSpeed;
     public float attackCooldown;
     public float attackDistance;
     public float alertDistance;
     public float patrolTargetDistance;
+    public float bulletDeviation;
+    public float bulletForce;
     public int score;
 
     Rigidbody2D rigidbody;
