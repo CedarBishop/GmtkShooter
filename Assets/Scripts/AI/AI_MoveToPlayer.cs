@@ -25,6 +25,11 @@ public class AI_MoveToPlayer : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+
+        if (player == null)
+        {
+            return;
+        }
         if (CheckDistance(attackDistance))
         {
             rigidbody.velocity = Vector2.zero;

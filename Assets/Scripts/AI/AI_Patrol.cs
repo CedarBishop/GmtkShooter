@@ -31,6 +31,10 @@ public class AI_Patrol : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (player == null)
+        {
+            return;
+        }
         if (CheckDistance(alertDistance, player.transform.position))
         {
             animator.SetBool("IsAlert", true);
