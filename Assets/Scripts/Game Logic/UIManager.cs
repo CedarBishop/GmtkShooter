@@ -55,8 +55,8 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         SetUIState(startingUIState);
-        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
-        sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1.0f);
+       // musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
+       // sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1.0f);
     }
 
     public void SetUIState (UIState state)
@@ -240,6 +240,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHealth (int num)
     {
+        print(num);
         healthImage.fillAmount = num / 5f;
     }
 

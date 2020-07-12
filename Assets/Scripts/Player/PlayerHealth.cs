@@ -19,9 +19,9 @@ public class PlayerHealth : HealthSystem
         }
 
         // Update UI
+        UIManager.instance.UpdateHealth(health);
         if (SoundManager.instance != null)
             SoundManager.instance.PlaySFX("SFX_PlayerHit");
-        UIManager.instance.UpdateHealth(health);
     }
 
     protected override void Death ()
