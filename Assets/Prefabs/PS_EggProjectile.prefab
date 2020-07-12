@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5075359225458795680}
   - component: {fileID: 5075359225458795683}
   m_Layer: 0
-  m_Name: PS_ClusterBomb
+  m_Name: PS_EggProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -221,8 +221,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.22441691, g: 0.19544323, b: 0.2264151, a: 0.6313726}
-      maxColor: {r: 0.80070573, g: 0.27341175, b: 0.83, a: 0.65882355}
+      minColor: {r: 0.90196085, g: 0.8862746, b: 0.7411765, a: 0.6745098}
+      maxColor: {r: 0.90196085, g: 0.69803923, b: 0.09411766, a: 0.6392157}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.27092367, g: 0.1724368, b: 0.2924528, a: 0.75686276}
@@ -284,8 +284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.13
-      minScalar: 0.08
+      scalar: 0.9
+      minScalar: 0.04
       maxCurve:
         serializedVersion: 2
         m_Curve:

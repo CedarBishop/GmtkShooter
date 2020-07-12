@@ -57,6 +57,9 @@ MonoBehaviour:
   floorSplat: {fileID: 3809765077108934173, guid: 624131a05d59b664f8744ca9a5540e34,
     type: 3}
   splatYScale: 0.2
+  clusterEffect: {fileID: 5075359225458795680, guid: bf0cba7af427f3948a12ccab612721cc,
+    type: 3}
+  trail: {fileID: 7182752939656122924}
 --- !u!58 &1733272096102337616
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -355,7 +358,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -364,7 +367,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.3457925
+        value: 0.2102792
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -372,13 +375,22 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 0.27102804
-        inSlope: 0.053339265
-        outSlope: 0.053339265
+        time: 0.4228037
+        value: 0.16662572
+        inSlope: -0.109493434
+        outSlope: -0.109493434
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.0901099
+        inWeight: 0.33333334
+        outWeight: 0.19309887
+      - serializedVersion: 3
+        time: 0.99786377
+        value: 0
+        inSlope: -0.69794834
+        outSlope: -0.69794834
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.17463891
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -386,7 +398,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 0.18823531, g: 0.09411766, b: 0.3529412, a: 1}
-      key1: {r: 0.6117647, g: 0.20000002, b: 0.6431373, a: 1}
+      key1: {r: 0.8372189, g: 0.31038627, b: 0.8773585, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

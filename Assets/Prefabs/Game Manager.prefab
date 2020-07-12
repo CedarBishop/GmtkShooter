@@ -82,5 +82,14 @@ MonoBehaviour:
   roundOneAISpawnAmount: 7
   timeBetweenSpawns: 2
   timeBetweenRounds: 3
+  coloursForComboText:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.96430874, b: 0.740566, a: 1}
+  - {r: 1, g: 0.8529527, b: 0.4198113, a: 1}
+  - {r: 1, g: 0.7198842, b: 0.35294116, a: 1}
+  - {r: 1, g: 0.4277299, b: 0.07843137, a: 1}
+  - {r: 1, g: 0.34692505, b: 0.25943398, a: 1}
+  floatingPoints: {fileID: 5930931179530635789, guid: 08eced2a88f39ec4fa09cf24193bb1a9,
+    type: 3}
   currentScore: 0
   pickupSpawners: []
