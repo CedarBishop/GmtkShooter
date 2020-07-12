@@ -311,7 +311,7 @@ MonoBehaviour:
   patrolTargetDistance: 5
   bulletDeviation: 5
   bulletForce: 200
-  score: 10
+  score: 50
 --- !u!114 &1807775799167696688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +327,7 @@ MonoBehaviour:
   health: 4
   flashes: 2
   flashTime: 0.2
+  floatingPoints: {fileID: 0}
 --- !u!95 &4776478014947782737
 Animator:
   serializedVersion: 3
