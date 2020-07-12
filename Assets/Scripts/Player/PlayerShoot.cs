@@ -38,6 +38,8 @@ public class PlayerShoot : MonoBehaviour
     public int enemyHealAmount;
     public float enemySpeedupAmount;
 
+    public Animator gunAnimator;
+
     private PlayerInput playerInput;
     private Camera mainCamera;
     private CameraShake cameraShake;
@@ -120,6 +122,9 @@ public class PlayerShoot : MonoBehaviour
 
     IEnumerator CoReload ()
     {
+        // Start Reloading Animation
+        gunAnimator.SetBool("Reloading", true);
+
         ammo = 0;
         UIManager.instance.UpdateAmmo(ammo);
 
@@ -130,6 +135,7 @@ public class PlayerShoot : MonoBehaviour
         ammo = clipSize;
         isReloading = false;
         UIManager.instance.UpdateAmmo(ammo);
+        gunAnimator.SetBool("Reloading", false);
     }
 
     void OnShoot ()
