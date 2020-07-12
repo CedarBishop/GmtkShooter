@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ad3d19806249447a433762704f7afe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuMusic: {fileID: 0}
-  gameMusic: {fileID: 0}
+  mainMenuMusic: {fileID: 8300000, guid: a1d902ccb67c8734aa3b21ea0d8d8264, type: 3}
+  gameMusic: {fileID: 8300000, guid: a1d902ccb67c8734aa3b21ea0d8d8264, type: 3}
   sounds:
   - name: SFX_PlayerShoot
     clip: {fileID: 8300000, guid: 91f509df82141e04e8c9fde34d71b3b6, type: 3}
     source: {fileID: 0}
-    volume: 1
+    volume: 0.492
   - name: SFX_PlayerHit
     clip: {fileID: 8300000, guid: 099a6744fb4931c41977b00491e23dcd, type: 3}
     source: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
   - name: SFX_JamSpawn
     clip: {fileID: 8300000, guid: b259026cb332bad449f9d5a63fb70a83, type: 3}
     source: {fileID: 0}
-    volume: 0.3
+    volume: 0.308
   - name: SFX_PickUp
     clip: {fileID: 8300000, guid: 01549cbcf097c9146ba017538a35ed58, type: 3}
     source: {fileID: 0}
@@ -86,47 +86,49 @@ MonoBehaviour:
   - name: SFX_Melee
     clip: {fileID: 8300000, guid: 6942a2b073291774ab2df2a0c98ba67f, type: 3}
     source: {fileID: 0}
-    volume: 0.592
+    volume: 1
   - name: SFX_EggShot
     clip: {fileID: 0}
     source: {fileID: 0}
-    volume: 0.496
+    volume: 1
   - name: SFX_SpeedUp
     clip: {fileID: 8300000, guid: c1076698640e68f4db0d10585ebc9846, type: 3}
     source: {fileID: 0}
-    volume: 0.2
+    volume: 1
   - name: SFX_EnemyDeath
     clip: {fileID: 8300000, guid: f8869280ecd56ca4786a1637e5a90e94, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 1
   - name: SFX_Combo1
     clip: {fileID: 8300000, guid: b1f8f73905a448e48824af35fa30277c, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 1
   - name: SFX_Combo2
     clip: {fileID: 0}
     source: {fileID: 0}
-    volume: 0
+    volume: 1
   - name: SFX_Combo3
     clip: {fileID: 0}
     source: {fileID: 0}
-    volume: 0
+    volume: 1
   - name: SFX_ButtonClick
     clip: {fileID: 8300000, guid: fbf29977869f9a34e96a5b35d2617914, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 1
   - name: SFX_ButtonRelease
     clip: {fileID: 8300000, guid: fd7bb232d0f82884fa9bd2af6b552497, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 1
   - name: SFX_GameOver
     clip: {fileID: 8300000, guid: cb41d88c325f64b4191854bbc6ea8336, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 1
   - name: SFX_StartButton
     clip: {fileID: 8300000, guid: 10f1679986f57224cb96f354ed831736, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 1
+  currentSfxVolume: 1
+  currentMusicVolume: 1
 --- !u!82 &194780919632546454
 AudioSource:
   m_ObjectHideFlags: 0

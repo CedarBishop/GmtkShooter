@@ -15,8 +15,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     Sound[] sounds;
 
-    [Range(0.0f, 1.0f)] private float currentSfxVolume;
-    [Range(0.0f, 1.0f)] private float currentMusicVolume;
+    [Range(0.0f, 1.0f)] public float currentSfxVolume;
+    [Range(0.0f, 1.0f)] public float currentMusicVolume;
 
     private void Awake()
     {
@@ -34,7 +34,6 @@ public class SoundManager : MonoBehaviour
     void Start()
     {
         musicAudioSource = GetComponent<AudioSource>();
-
 
         currentMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
         musicAudioSource.volume = currentMusicVolume;
@@ -97,49 +96,22 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public float SetMusicVolume(float value)
+    public void SetMusicVolume(float value)
     {
-        currentMusicVolume += value;
-        if (currentMusicVolume > 1.0f)
-        {
-            currentMusicVolume = 1.0f;
-        }
-        else if (currentMusicVolume < 0.0f)
-        {
-            currentMusicVolume = 0.0f;
-        }
-
-        print(currentMusicVolume);
+        currentMusicVolume = value;
         PlayerPrefs.SetFloat("MusicVolume", currentMusicVolume);
         musicAudioSource.volume = currentMusicVolume;
-        return currentMusicVolume;
     }
 
-    public float SetSFXVolume(float value)
+    public void SetSFXVolume(float value)
     {
-        currentSfxVolume += value;
-
-        if (currentSfxVolume > 1.0f)
-        {
-            currentSfxVolume = 1.0f;
-        }
-        else if (currentSfxVolume < 0.0f)
-        {
-            currentSfxVolume = 0.0f;
-        }
+        currentSfxVolume = value;
 
         PlayerPrefs.SetFloat("SfxVolume", currentSfxVolume);
-        foreach (AudioSource source in sfx)
+        foreach (var sound in sounds)
         {
-            source.volume = currentSfxVolume;
+            sound.UpdateVolume(currentSfxVolume);
         }
-
-        //foreach (PlayerAudio audio in playerAudioList)
-        //{
-        //    audio.SetVolume(currentSfxVolume);
-        //}
-
-        return currentSfxVolume;
     }
 
     public void PlayMusic(bool isMainMenu)
@@ -184,9 +156,13 @@ public class Sound
     {
         source = _source;
         source.clip = clip;
+        source.volume = volume;
     }
 
-
+    public void UpdateVolume (float value)
+    {
+        source.volume = value * volume;
+    }
 
     public void Play()
     {
@@ -198,28 +174,5 @@ public class Sound
 
         source.Play();
 
-    }
-
-
-    /**
- * Creates a sub clip from an audio clip based off of the start time
- * and the stop time. The new clip will have the same frequency as
- * the original.
- */
-    private AudioClip MakeSubclip(AudioClip clip, float start, float stop)
-    {
-        /* Create a new audio clip */
-        int frequency = clip.frequency;
-        float timeLength = stop - start;
-        int samplesLength = (int)(frequency * timeLength);
-        AudioClip newClip = AudioClip.Create(clip.name + "-sub", samplesLength, 1, frequency, false);
-        /* Create a temporary buffer for the samples */
-        float[] data = new float[samplesLength];
-        /* Get the data from the original clip */
-        clip.GetData(data, (int)(frequency * start));
-        /* Transfer the data to the new clip */
-        newClip.SetData(data, 0);
-        /* Return the sub clip */
-        return newClip;
     }
 }
