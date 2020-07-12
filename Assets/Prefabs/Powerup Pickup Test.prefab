@@ -230,9 +230,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToLive: 15
   possibleBuffs:
-  - {fileID: 11400000, guid: cdb66d5495ac27247a93edd763366e46, type: 2}
+  - {fileID: 11400000, guid: acd6061640b33c34eac263492d21302f, type: 2}
+  - {fileID: 11400000, guid: 465f27f053f2926458d1bd529a943e65, type: 2}
   possibleNerfs:
-  - {fileID: 11400000, guid: 348471bd70d0fb64b90b3afb49ca7f02, type: 2}
+  - {fileID: 11400000, guid: f70fbd9b0c67d1f46afe5a489a55ee14, type: 2}
+  - {fileID: 11400000, guid: d5b2b1823940e7344964f961619157af, type: 2}
   duration: 15
 --- !u!95 &7535240965955641460
 Animator:

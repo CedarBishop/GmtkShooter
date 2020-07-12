@@ -148,7 +148,7 @@ public class PlayerShoot : MonoBehaviour
                     bulletSpawnPoint.position,
                     gunOriginTransform.rotation);
 
-                bullet.Initialise(damage,force,angle,redirectTime, bulletDeviation, lightningBounceAmount, sunExplodeBulletAmount, enemyHealAmount, enemySpeedupAmount);
+                bullet.Initialise(damage,force,angle,redirectTime, bulletDeviation, lightningBounceAmount, sunExplodeBulletAmount, enemyHealAmount, enemySpeedupAmount, null);
                 bullet.transform.localScale = new Vector3(bulletScale, bulletScale, bulletScale);
                 zRotation += sprayAmount;
 
@@ -161,7 +161,7 @@ public class PlayerShoot : MonoBehaviour
                    bulletSpawnPoint.position,
                    gunOriginTransform.rotation);
 
-            bullet.Initialise(damage, force, angle, redirectTime, bulletDeviation, lightningBounceAmount, sunExplodeBulletAmount, enemyHealAmount, enemySpeedupAmount);
+            bullet.Initialise(damage, force, angle, redirectTime, bulletDeviation, lightningBounceAmount, sunExplodeBulletAmount, enemyHealAmount, enemySpeedupAmount, null);
             bullet.transform.localScale = new Vector3(bulletScale, bulletScale, bulletScale);
         }
 
