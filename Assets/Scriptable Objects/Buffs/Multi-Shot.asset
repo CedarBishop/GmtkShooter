@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BuffData
   buff: 0
   buffIcon: {fileID: 21300000, guid: 2d00e49f1803e7d4cae153a684e7a940, type: 3}
-  badgeColor: {r: 0.8584906, g: 0.43707418, b: 0.2956123, a: 0}
+  badgeColor: {r: 0.85882354, g: 0.5618853, b: 0.46290588, a: 1}

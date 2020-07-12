@@ -19,6 +19,8 @@ public class UIManager : MonoBehaviour
 
     public Text roundText;
 
+    public GameObject buffBadge;
+
     private void Awake()
     {
         if (instance == null)
@@ -122,17 +124,20 @@ public class UIManager : MonoBehaviour
 
     public void CreateBuffBadge (Color c, Sprite s, float time)
     {
+        GameObject badge = InstantiateBadge();
+
+        /// Set timer
+        badge.GetComponent<BuffBadgeManager>().duration = time;
+
         /// Set Colour
+        badge.transform.GetChild(0).GetComponent<Image>().color = c;
+        /// Set Background Colour
+        Color.RGBToHSV(c, out float hue, out float sat, out float val);
+        badge.GetComponent<Image>().color = Color.HSVToRGB(hue - 0.05f, sat + 0.3f, val);
 
         /// Set Sprite
+        badge.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = s;
 
-        /// Set Badge Colour
-
-        /// Set Decayed Badge Colour
-
-        /// Start timer
-
-        //// Update Badge Colour Fill Slider to fade away.
 
     }
 
@@ -152,8 +157,11 @@ public class UIManager : MonoBehaviour
 
     }
 
-    private void InstantiateBadge()
+    private GameObject InstantiateBadge()
     {
-        //GameObject Instantiate
+        Vector2 spawnPos = new Vector3(Random.Range(0, Screen.width), 100, 0);
+        GameObject temp = Instantiate(buffBadge, transform);
+        temp.GetComponent<RectTransform>().position = spawnPos;
+        return temp;
     }
 }

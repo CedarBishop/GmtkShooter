@@ -409,6 +409,8 @@ MonoBehaviour:
   endMatchUIParent: {fileID: 864931627035115134}
   startingUIState: 1
   roundText: {fileID: 3819176496577881973}
+  buffBadge: {fileID: 4168957112535710158, guid: d06080c7b8727df489ab51134066c528,
+    type: 3}
 --- !u!1 &5433901418406052448
 GameObject:
   m_ObjectHideFlags: 0
