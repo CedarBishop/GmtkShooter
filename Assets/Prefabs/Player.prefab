@@ -313,7 +313,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -354,7 +354,7 @@ MonoBehaviour:
   cameraShakeMagnitude: 0.07
   sprayAmount: 10
   damage: 1
-  force: 200
+  force: 400
   controllerAim: {x: 0, y: 0, z: 0}
   isHoldingShootButton: 0
   bulletsPerShot: 1
@@ -364,7 +364,7 @@ MonoBehaviour:
   knockBackAmount: 4
   knockbackAngle: 0
   redirectAngle: 0
-  redirectTime: 0.3
+  redirectTime: 0.5
   bulletDeviation: 0
   enemyHealAmount: 0
   enemySpeedupAmount: 0
