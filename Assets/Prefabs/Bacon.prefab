@@ -306,7 +306,7 @@ MonoBehaviour:
   damage: 1
   movementSpeed: 100
   attackCooldown: 4
-  attackDistance: 1
+  attackDistance: 10
   alertDistance: 5
   patrolTargetDistance: 5
   bulletDeviation: 5
