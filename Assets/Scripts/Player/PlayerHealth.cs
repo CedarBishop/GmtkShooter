@@ -13,15 +13,15 @@ public class PlayerHealth : HealthSystem
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        if (invincible)
+        if (invincible== false)
         {
-            return;
+            if (SoundManager.instance != null)
+                SoundManager.instance.PlaySFX("SFX_PlayerHit");
         }
 
         // Update UI
         UIManager.instance.UpdateHealth(health);
-        if (SoundManager.instance != null)
-            SoundManager.instance.PlaySFX("SFX_PlayerHit");
+        
     }
 
     protected override void Death ()
