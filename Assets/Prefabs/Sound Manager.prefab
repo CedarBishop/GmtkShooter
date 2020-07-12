@@ -88,7 +88,7 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0.7
   - name: SFX_EggShot
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 6a5d6b494e2079f48947067aa0b5602c, type: 3}
     source: {fileID: 0}
     volume: 0.7
   - name: SFX_SpeedUp
@@ -151,8 +151,8 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
-  Mute: 1
+  Loop: 1
+  Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
