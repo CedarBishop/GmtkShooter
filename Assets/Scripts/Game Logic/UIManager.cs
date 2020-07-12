@@ -19,7 +19,6 @@ public class UIManager : MonoBehaviour
 
     public Text roundText;
 
-
     private void Awake()
     {
         if (instance == null)
@@ -97,6 +96,25 @@ public class UIManager : MonoBehaviour
         SetUIState(UIState.MainMenu);
     }
 
+    public void TogglePause ()
+    {
+        switch (uiState)
+        {
+            case UIState.MainMenu:
+                break;
+            case UIState.Game:
+                Pause();
+                break;
+            case UIState.Pause:
+                Resume();
+                break;
+            case UIState.EndMatch:
+                break;
+            default:
+                break;
+        }
+    }
+
     public void Quit ()
     {
         Application.Quit();
@@ -132,5 +150,10 @@ public class UIManager : MonoBehaviour
 
         //// Update Badge Colour Fill Slider to fade away.
 
+    }
+
+    private void InstantiateBadge()
+    {
+        //GameObject Instantiate
     }
 }
