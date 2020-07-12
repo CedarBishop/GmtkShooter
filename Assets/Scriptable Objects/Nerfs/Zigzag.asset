@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Zigzag
   m_EditorClassIdentifier: Assembly-CSharp::NerfData
   nerf: 1
-  nerfIcon: {fileID: 0}
-  badgeColor: {r: 0, g: 0, b: 0, a: 0}
+  nerfIcon: {fileID: 21300000, guid: 3df62002cfdf081449f51a18f361eb05, type: 3}
+  badgeColor: {r: 0.30709326, g: 0.6320754, b: 0.5869808, a: 1}

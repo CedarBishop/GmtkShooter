@@ -18,6 +18,9 @@ public class UIManager : MonoBehaviour
     private UIState uiState;
 
     public Text roundText;
+    public Text scoreText;
+    public Text healthText;
+    public Text ammoText;
 
     public GameObject buffBadge;
 
@@ -143,17 +146,19 @@ public class UIManager : MonoBehaviour
 
     public void CreateNerfBadge(Color c, Sprite s, float time)
     {
+        GameObject badge = InstantiateBadge();
+
+        /// Set timer
+        badge.GetComponent<BuffBadgeManager>().duration = time;
+
         /// Set Colour
+        badge.transform.GetChild(0).GetComponent<Image>().color = c;
+        /// Set Background Colour
+        Color.RGBToHSV(c, out float hue, out float sat, out float val);
+        badge.GetComponent<Image>().color = Color.HSVToRGB(hue - 0.05f, sat + 0.3f, val);
 
         /// Set Sprite
-
-        /// Set Badge Colour
-
-        /// Set Decayed Badge Colour
-
-        /// Start timer
-
-        //// Update Badge Colour Fill Slider to fade away.
+        badge.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = s;
 
     }
 
@@ -163,5 +168,33 @@ public class UIManager : MonoBehaviour
         GameObject temp = Instantiate(buffBadge, transform);
         temp.GetComponent<RectTransform>().position = spawnPos;
         return temp;
+    }
+
+    public void UpdateHealth (int num)
+    {
+        healthText.text = "Health: " + num;
+    }
+
+    public void UpdateWave(int num)
+    {
+        roundText.text = "Wave: " + num;
+        if (num <= 0)
+        {
+            roundText.text = "";
+        }
+    }
+
+    public void UpdateScore (int num)
+    {
+        scoreText.text = "Score: " + num;
+    }
+
+    public void UpdateAmmo (int num)
+    {
+        ammoText.text = "Ammo: " + num;
+        if (num <= 0)
+        {
+            ammoText.text = "Reloading";
+        }
     }
 }

@@ -22,7 +22,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "StartShoot",
+                    "name": "Shoot",
                     "type": "Button",
                     "id": "4a426412-efa1-4c83-b516-604d806e4919",
                     "expectedControlType": "Button",
@@ -30,17 +30,17 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "EndShoot",
+                    "name": "Pause",
                     "type": "Button",
-                    "id": "69b6de91-d063-40dd-80aa-f28b62f0b708",
+                    "id": "8aa93e78-1813-4ba7-89b3-543b062e677e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=1)"
                 },
                 {
-                    "name": "Pause",
+                    "name": "Reload",
                     "type": "Button",
-                    "id": "8aa93e78-1813-4ba7-89b3-543b062e677e",
+                    "id": "d7a479f0-578e-4a40-84c4-fe7fc5491dcf",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press(behavior=1)"
@@ -186,7 +186,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "StartShoot",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -197,29 +197,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "StartShoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c90302c7-91eb-4bb4-a39b-6d70c2c37893",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "EndShoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "36f0cd99-e552-4e8d-b808-84e5bf5cb94c",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "EndShoot",
+                    "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -242,6 +220,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "92c9108b-82b6-4135-946f-1158e6b641e4",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b6c2cb45-27f6-4b6c-bd3d-d6c40a7baa75",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Reload",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

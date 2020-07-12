@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Inaccuracy
   m_EditorClassIdentifier: Assembly-CSharp::NerfData
   nerf: 2
-  nerfIcon: {fileID: 0}
-  badgeColor: {r: 0, g: 0, b: 0, a: 0}
+  nerfIcon: {fileID: 21300000, guid: b88e5fceb1debc44eb1bd389b2bb0950, type: 3}
+  badgeColor: {r: 0.6981132, g: 0.3523496, b: 0.6796372, a: 1}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy Speed-up
   m_EditorClassIdentifier: Assembly-CSharp::NerfData
   nerf: 7
-  nerfIcon: {fileID: 0}
-  badgeColor: {r: 0, g: 0, b: 0, a: 0}
+  nerfIcon: {fileID: 21300000, guid: f36ea00f791770d418cf68dddaf6e322, type: 3}
+  badgeColor: {r: 0.5494885, g: 0.6509434, b: 0.3285422, a: 1}

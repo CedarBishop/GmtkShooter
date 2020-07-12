@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Inverse Control
   m_EditorClassIdentifier: Assembly-CSharp::NerfData
   nerf: 5
-  nerfIcon: {fileID: 0}
-  badgeColor: {r: 0, g: 0, b: 0, a: 0}
+  nerfIcon: {fileID: 21300000, guid: 694bc96808ae2194793a35ebc54201c3, type: 3}
+  badgeColor: {r: 0.4713645, g: 0.2901961, b: 0.59607846, a: 1}
