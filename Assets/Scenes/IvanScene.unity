@@ -131,12 +131,12 @@ PrefabInstance:
     - target: {fileID: 318252846740128743, guid: ff7df4a29b99dd2488885bf396a32ac4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.22
+      value: 5.52
       objectReference: {fileID: 0}
     - target: {fileID: 318252846740128743, guid: ff7df4a29b99dd2488885bf396a32ac4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.17
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 318252846740128743, guid: ff7df4a29b99dd2488885bf396a32ac4,
         type: 3}
@@ -156,12 +156,12 @@ PrefabInstance:
     - target: {fileID: 318252846740128743, guid: ff7df4a29b99dd2488885bf396a32ac4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0127447825
+      value: 0.030927194
       objectReference: {fileID: 0}
     - target: {fileID: 318252846740128743, guid: ff7df4a29b99dd2488885bf396a32ac4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9999188
+      value: 0.9995217
       objectReference: {fileID: 0}
     - target: {fileID: 318252846740128743, guid: ff7df4a29b99dd2488885bf396a32ac4,
         type: 3}
@@ -181,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 318252846740128743, guid: ff7df4a29b99dd2488885bf396a32ac4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 358.54
+      value: 363.545
       objectReference: {fileID: 0}
     - target: {fileID: 318252846740128745, guid: ff7df4a29b99dd2488885bf396a32ac4,
         type: 3}
@@ -1371,22 +1371,22 @@ PrefabInstance:
     - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
       propertyPath: minSpawnX
-      value: -10
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
       propertyPath: maxSpawnX
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
       propertyPath: minSpawnY
-      value: -10
+      value: -9.5
       objectReference: {fileID: 0}
     - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
       propertyPath: maxSpawnY
-      value: 10
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}

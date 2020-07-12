@@ -54,23 +54,23 @@ MonoBehaviour:
   - name: SFX_PlayerHit
     clip: {fileID: 8300000, guid: 099a6744fb4931c41977b00491e23dcd, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.688
   - name: SFX_JamSpawn
     clip: {fileID: 8300000, guid: b259026cb332bad449f9d5a63fb70a83, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.3
   - name: SFX_PickUp
     clip: {fileID: 8300000, guid: 01549cbcf097c9146ba017538a35ed58, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.717
   - name: SFX_WornOff
     clip: {fileID: 8300000, guid: 27e5896d8ce3bd14f8a4826a5693201e, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.388
   - name: SFX_Reload
-    clip: {fileID: 8300000, guid: 83ac64c4c10740d40baae54d2613c315, type: 3}
+    clip: {fileID: 8300000, guid: e9b137804be02a440811ddfe27545229, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.746
   - name: SFX_WaveSpawn
     clip: {fileID: 8300000, guid: 0b2e2b4cc59d3aa4a8d17ca73c8908b0, type: 3}
     source: {fileID: 0}
@@ -78,29 +78,29 @@ MonoBehaviour:
   - name: SFX_WaveCleared
     clip: {fileID: 0}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.633
   - name: SFX_EnemyHit
     clip: {fileID: 8300000, guid: 13cd4582a47e7d04bb00a509c0c1a899, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.413
   - name: SFX_Melee
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 6942a2b073291774ab2df2a0c98ba67f, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.592
   - name: SFX_EggShot
     clip: {fileID: 0}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.496
   - name: SFX_SpeedUp
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: c1076698640e68f4db0d10585ebc9846, type: 3}
     source: {fileID: 0}
-    volume: 0
+    volume: 0.2
   - name: SFX_EnemyDeath
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: f8869280ecd56ca4786a1637e5a90e94, type: 3}
     source: {fileID: 0}
     volume: 0
   - name: SFX_Combo1
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: b1f8f73905a448e48824af35fa30277c, type: 3}
     source: {fileID: 0}
     volume: 0
   - name: SFX_Combo2
@@ -120,11 +120,11 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0
   - name: SFX_GameOver
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: cb41d88c325f64b4191854bbc6ea8336, type: 3}
     source: {fileID: 0}
     volume: 0
   - name: SFX_StartButton
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 10f1679986f57224cb96f354ed831736, type: 3}
     source: {fileID: 0}
     volume: 0
 --- !u!82 &194780919632546454
