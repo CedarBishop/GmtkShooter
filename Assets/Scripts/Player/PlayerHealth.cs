@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerHealth : HealthSystem
 {
-
     protected override void Start()
     {
         UIManager.instance.UpdateHealth(health);
@@ -14,7 +13,11 @@ public class PlayerHealth : HealthSystem
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        print("PlayerHealth: Take Damage");
+        if (invincible)
+        {
+            return;
+        }
+
         // Update UI
         if (SoundManager.instance != null)
             SoundManager.instance.PlaySFX("SFX_PlayerHit");
@@ -23,6 +26,7 @@ public class PlayerHealth : HealthSystem
 
     protected override void Death ()
     {
+        base.Death();
         GameManager.instance.GameOver();
     }
 }

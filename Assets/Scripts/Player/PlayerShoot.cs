@@ -75,7 +75,7 @@ public class PlayerShoot : MonoBehaviour
     private void Update()
     {
         isGamepad = (playerInput.currentControlScheme == "Gamepad");
-        if (isGamepad == false)
+        if (isGamepad == false && Time.timeScale > 0)
         {
             Vector2 direction = mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             gunOriginTransform.right = (direction).normalized;
@@ -84,7 +84,7 @@ public class PlayerShoot : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (gunOriginTransform.rotation.eulerAngles.z < -90 || gunOriginTransform.rotation.eulerAngles.z > 90)
+        if (gunOriginTransform.rotation.eulerAngles.z < -90 || gunOriginTransform.rotation.eulerAngles.z > 90 && gunOriginTransform.rotation.eulerAngles.z < 270)
         {
             gunSprite.flipY = true;
         }
