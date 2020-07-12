@@ -22,12 +22,20 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Shoot",
+                    "name": "StartShoot",
                     "type": "Button",
                     "id": "4a426412-efa1-4c83-b516-604d806e4919",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "Press"
+                },
+                {
+                    "name": "EndShoot",
+                    "type": "Button",
+                    "id": "af36d843-11ba-42dd-8a08-37fa79c3a0c7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)"
                 },
                 {
                     "name": "Pause",
@@ -186,7 +194,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Shoot",
+                    "action": "StartShoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -197,7 +205,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Shoot",
+                    "action": "StartShoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -242,6 +250,28 @@
                     "processors": "",
                     "groups": "Keyboard",
                     "action": "Reload",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "acc6132f-43d1-44ac-953f-bcd874b235d3",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "EndShoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e674b7e5-86d6-4560-ab4b-2a220f4dbbb5",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "EndShoot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
