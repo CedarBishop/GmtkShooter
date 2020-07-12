@@ -73,6 +73,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
+        isGamepad = (playerInput.currentControlScheme == "Gamepad");
         if (isGamepad == false)
         {
             Vector2 direction = mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
