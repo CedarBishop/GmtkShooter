@@ -9,10 +9,6 @@ public class Bullet : MonoBehaviour
     public LayerMask enemyLayer;
     private float force;
     private int damage;
-    public Shadow shadow;
-    public GameObject floorSplat;
-    public float splatYScale = 0.15f;
-
 
     private Rigidbody2D rigidbody;
     private float redirectAngle;
@@ -22,6 +18,13 @@ public class Bullet : MonoBehaviour
     private float enemySpeedUpAmount;
     private int enemyHealAmount;
     private Collider2D colliderToIgnore;
+
+    public Shadow shadow;
+    public GameObject floorSplat;
+    public float splatYScale = 0.15f;
+    public ParticleSystem clusterEffect;
+    public GameObject trail;
+
 
     private void Start()
     {
@@ -42,6 +45,15 @@ public class Bullet : MonoBehaviour
         enemyHealAmount = EnemyHealAmount;
         enemySpeedUpAmount = EnemySpeedupAmount;
         colliderToIgnore = ColliderToIgnore;
+
+        if (lightningCount>0)
+        {
+            trail.SetActive(true);
+        }
+        else
+        {
+            trail.SetActive(false);
+        }
 
         float zRotation = transform.rotation.eulerAngles.z + Random.Range(-BulletDeviation, BulletDeviation);
         transform.rotation = Quaternion.Euler(0, 0, zRotation);
@@ -77,12 +89,6 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
-        if (collision.CompareTag("Environment"))
-        {
-            Destroy(gameObject);
-            SpawnSplat();
-
-        }
         if (collision.GetComponent<AIHealth>())
         {
             collision.GetComponent<AIHealth>().TakeDamage(damage);
@@ -100,6 +106,7 @@ public class Bullet : MonoBehaviour
                 for (int i = 0; i < explosionProjectileCount; i++)
                 {
                     Bullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 359.9f)));
+                    Instantiate(clusterEffect, transform.position, Quaternion.identity);
                     bullet.Initialise(damage, force, redirectAngle, redirectTime, 0, 0, 0, enemyHealAmount, enemySpeedUpAmount, collision);
                 }
             }
@@ -139,8 +146,8 @@ public class Bullet : MonoBehaviour
 
     private void SpawnSplat()
     {
-        float splatSize = Random.Range(0.8f, 1.1f);
+       
         GameObject splat = Instantiate(floorSplat, transform.position, Quaternion.identity);
-        splat.transform.localScale.Set(splatSize, splatSize - 0.15f, 1);
+   
     }
 }
