@@ -14,8 +14,10 @@ public class PlayerShoot : MonoBehaviour
     public float sprayAmount;
     public int damage;
     public float force;
+    public int clipSize;
+    public float reloadTime;
 
-    public Vector3 controllerAim;
+    [HideInInspector]public Vector3 controllerAim;
  
     [HideInInspector] public bool isHoldingShootButton;
     
@@ -29,6 +31,7 @@ public class PlayerShoot : MonoBehaviour
     public float knockBackAmount;
     public float knockbackAngle;
     public float redirectAngle;
+    public float maximumRedirectAngle;
     public float redirectTime;
     public float bulletDeviation;
     public int enemyHealAmount;
@@ -41,6 +44,8 @@ public class PlayerShoot : MonoBehaviour
 
     private bool isGamepad;
     private bool canShoot;
+    private bool isReloading;
+    private int ammo;
 
 
     void Start()
@@ -51,6 +56,8 @@ public class PlayerShoot : MonoBehaviour
         cameraShake = mainCamera.GetComponent<CameraShake>();
         isGamepad = (playerInput.currentControlScheme == "Gamepad");
         canShoot = true;
+        ammo = clipSize;
+        isReloading = false;
     }
 
     void OnAim (InputValue value)
@@ -72,30 +79,56 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    //void FixedUpdate()
+    //{
+    //    if (isHoldingShootButton)
+    //    {
+    //        Shoot();
+    //    }
+    //}
+
+    //void OnStartShoot()
+    //{
+    //    isHoldingShootButton = true;
+    //}
+
+    //void OnEndShoot()
+    //{
+    //    isHoldingShootButton = false;
+    //}
+
+    void OnReload ()
     {
-        if (isHoldingShootButton)
+        if (isReloading)
         {
-            Shoot();
+            return;
         }
+        StartCoroutine("CoReload");
     }
 
-    void OnStartShoot()
+    IEnumerator CoReload ()
     {
-        isHoldingShootButton = true;
+        ammo = 0;
+        isReloading = true;
+        yield return new WaitForSeconds(reloadTime);
+        ammo = clipSize;
+        isReloading = false;
     }
 
-    void OnEndShoot()
-    {
-        isHoldingShootButton = false;
-    }
-
-    void Shoot ()
+    void OnShoot ()
     {
         if (canShoot == false)
         {
             return;
         }
+
+        if (ammo <= 0)
+        {
+            OnReload();
+            return;
+        }
+
+        float angle = (redirectAngle > maximumRedirectAngle) ? maximumRedirectAngle : redirectAngle;
 
         if (bulletsPerShot > 1)
         {
@@ -108,7 +141,7 @@ public class PlayerShoot : MonoBehaviour
                     bulletSpawnPoint.position,
                     gunOriginTransform.rotation);
 
-                bullet.Initialise(damage,force,redirectAngle,redirectTime, bulletDeviation, lightningBounceAmount, sunExplodeBulletAmount, enemyHealAmount, enemySpeedupAmount);
+                bullet.Initialise(damage,force,angle,redirectTime, bulletDeviation, lightningBounceAmount, sunExplodeBulletAmount, enemyHealAmount, enemySpeedupAmount);
                 bullet.transform.localScale = new Vector3(bulletScale, bulletScale, bulletScale);
                 zRotation += sprayAmount;
 
@@ -121,10 +154,11 @@ public class PlayerShoot : MonoBehaviour
                    bulletSpawnPoint.position,
                    gunOriginTransform.rotation);
 
-            bullet.Initialise(damage, force, redirectAngle, redirectTime, bulletDeviation, lightningBounceAmount, sunExplodeBulletAmount, enemyHealAmount, enemySpeedupAmount);
+            bullet.Initialise(damage, force, angle, redirectTime, bulletDeviation, lightningBounceAmount, sunExplodeBulletAmount, enemyHealAmount, enemySpeedupAmount);
             bullet.transform.localScale = new Vector3(bulletScale, bulletScale, bulletScale);
-        }        
-        
+        }
+
+        ammo--;
 
         if (cameraShake != null)
         {
