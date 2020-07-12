@@ -20,7 +20,6 @@ public class Bob : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = startPos + new Vector3(0f, height * Mathf.Sin(Time.time * speed) + shift, 0f);
-      
+        transform.position = startPos + new Vector3(0f, height * Mathf.Sin(Time.unscaledTime * speed) + shift, 0f);  
     }
 }

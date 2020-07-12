@@ -31,6 +31,9 @@ public class UIManager : MonoBehaviour
     public Text gameOverTimeText;
     public BuffBadgeManager buffBadge;
 
+    private float gameTime;
+    private int gameScore;
+
     private void Awake()
     {
         if (instance == null)
@@ -79,6 +82,8 @@ public class UIManager : MonoBehaviour
                 break;
             case UIState.EndMatch:
                 endMatchUIParent.SetActive(true);
+                UpdateGameOverScore();
+                UpdateGameOverTime();
                 Time.timeScale = 0.0f;
                 break;
             default:
@@ -223,6 +228,17 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTimer (float time)
     {
-        timerText.text = "Time: " + time.ToString("F1");
+        timerText.text = "Time " + (time / 60 - 0.5f).ToString("0") + ":" + (time % 60 - 0.5f).ToString("00");
+        gameTime = time;
+    }
+
+    public void UpdateGameOverScore()
+    {
+        gameOverScoreText.text = "Score\n" + gameScore.ToString("0");
+    }
+
+    public void UpdateGameOverTime()
+    {
+        gameOverTimeText.text = "Time\n" + (gameTime / 60 - 0.5f).ToString("0") + ":" + (gameTime % 60 - 0.5f).ToString("00");
     }
 }
