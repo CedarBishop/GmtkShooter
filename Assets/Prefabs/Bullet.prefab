@@ -56,7 +56,7 @@ MonoBehaviour:
   shadow: {fileID: 8386827832655413888}
   floorSplat: {fileID: 3809765077108934173, guid: 624131a05d59b664f8744ca9a5540e34,
     type: 3}
-  splatYScale: 0.47
+  splatYScale: 0.2
 --- !u!58 &1733272096102337616
 CircleCollider2D:
   m_ObjectHideFlags: 0
