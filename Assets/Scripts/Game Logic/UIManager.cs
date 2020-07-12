@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject gameUIParent;
     public GameObject pauseUIParent;
     public GameObject endMatchUIParent;
+    public GameObject soundSettingParent;
 
     public LayoutGroup buffTray;
     public LayoutGroup nerfTray;
@@ -29,6 +30,10 @@ public class UIManager : MonoBehaviour
 
     public Text gameOverScoreText;
     public Text gameOverTimeText;
+
+    public Slider musicSlider;
+    public Slider sfxSlider;
+
     public BuffBadgeManager buffBadge;
 
     private float gameTime;
@@ -50,6 +55,8 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         SetUIState(startingUIState);
+        musicSlider.value = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
+        sfxSlider.value = PlayerPrefs.GetFloat("SfxVolume", 1.0f);
     }
 
     public void SetUIState (UIState state)
@@ -61,11 +68,13 @@ public class UIManager : MonoBehaviour
         gameUIParent.SetActive(false);
         pauseUIParent.SetActive(false);
         endMatchUIParent.SetActive(false);
+        soundSettingParent.SetActive(false);
 
         switch (uiState)
         {
             case UIState.MainMenu:
                 mainMenuUIParent.SetActive(true);
+                soundSettingParent.SetActive(true);
                 Time.timeScale = 1.0f;
                 break;
             case UIState.Tutorial:
@@ -78,6 +87,7 @@ public class UIManager : MonoBehaviour
                 break;
             case UIState.Pause:
                 pauseUIParent.SetActive(true);
+                soundSettingParent.SetActive(true);
                 Time.timeScale = 0.0f;
                 break;
             case UIState.EndMatch:
@@ -94,39 +104,69 @@ public class UIManager : MonoBehaviour
     public void Pause ()
     {
         SetUIState(UIState.Pause);
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_ButtonClick");
     }
 
     public void Resume ()
     {
         SetUIState(UIState.Game);
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_ButtonClick");
     }
 
     public void StartGame ()
     {
         GameManager.instance.StartGame();
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_StartButton");
         SetUIState(UIState.Game);
+        BuffBadgeManager[] buffBadgeManagers = FindObjectsOfType<BuffBadgeManager>();
+        if (buffBadgeManagers != null)
+        {
+            foreach (var item in buffBadgeManagers)
+            {
+                Destroy(item.gameObject);
+            }
+        }
     }
 
     public void MainMenu ()
     {
         GameManager.instance.GoToMainMenu();
         SetUIState(UIState.MainMenu);
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_ButtonClick");
     }
 
     public void ReturnToMainMenu ()
     {
         SetUIState(UIState.MainMenu);
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_ButtonClick");
     }
 
     public void GoToTutorial ()
     {
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_ButtonClick");
         SetUIState(UIState.Tutorial);
     }
 
-
-    public void Clear ()
+    public void UpdateMusicVolume ()
     {
-        
+        if (SoundManager.instance != null)
+            SoundManager.instance.SetMusicVolume(musicSlider.value);
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_ButtonClick");
+    }
+
+    public void UpdateSFXVolume ()
+    {
+        if (SoundManager.instance != null)
+            SoundManager.instance.SetSFXVolume(sfxSlider.value);
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_ButtonClick");
     }
 
     public void TogglePause ()

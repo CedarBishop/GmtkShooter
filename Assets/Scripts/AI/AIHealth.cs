@@ -26,5 +26,8 @@ public class AIHealth : HealthSystem
         Destroy(go,1.0f);
         GameManager.instance.waveSystem.AIDied(score);
         base.Death();
+
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_EnemyDeath");
     }
 }

@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
         inGame = false;
         UIManager.instance.gameOverScoreText.text = "Score: " + waveSystem.currentScore;
         UIManager.instance.gameOverTimeText.text = "Time: " + timer.ToString("F1");
+
+        if (SoundManager.instance != null)
+            SoundManager.instance.PlaySFX("SFX_GameOver");
     }
 
     public void GoToMainMenu()
