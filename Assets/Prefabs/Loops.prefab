@@ -203,7 +203,7 @@ MonoBehaviour:
   attackDistance: 1
   alertDistance: 10
   patrolTargetDistance: 0
-  score: 0
+  score: 10
 --- !u!114 &1807775799167696688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb771bce40f759a4596254eba18b2e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 3
 --- !u!95 &4776478014947782737
 Animator:
   serializedVersion: 3
@@ -249,9 +249,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.03, y: -0.12}
+  m_Offset: {x: -0.029999992, y: -0.09922516}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.2943339
 --- !u!50 &2096110711781507317
 Rigidbody2D:
   serializedVersion: 4
