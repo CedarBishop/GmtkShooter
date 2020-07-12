@@ -455,6 +455,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  flashes: 5
+  flashTime: 0.2
 --- !u!1 &7521234866317753857
 GameObject:
   m_ObjectHideFlags: 0

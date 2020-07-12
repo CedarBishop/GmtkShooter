@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
     public float minSpawnY;
     public float maxSpawnY;
 
+    private float timer;
+    private bool inGame;
+
     private void Awake()
     {
         if (instance == null)
@@ -34,15 +37,19 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(gameSceneName);
         waveSystem.StartGame();
+        timer = 0.0f;
+        inGame = true;
     }
 
     public void GameOver()
     {
         UIManager.instance.SetUIState(UIState.EndMatch);
+        inGame = false;
     }
 
     public void GoToMainMenu()
     {
+        inGame = false;
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
@@ -75,6 +82,16 @@ public class GameManager : MonoBehaviour
             pos = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
         } while (CanSpawnHere(pos) == false);
         return pos;
+    }
+
+    private void FixedUpdate()
+    {
+        if (inGame)
+        {
+            timer += Time.fixedDeltaTime;
+            UIManager.instance.UpdateTimer(timer);
+        }
+        
     }
 
 }

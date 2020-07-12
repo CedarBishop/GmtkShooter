@@ -5,20 +5,27 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     public int health;
+    public int flashes;
+    public float flashTime = 0.2f;
 
     private SpriteRenderer spriteRenderer;
     private Material material;
-    private float flashTime = 0.2f;
     private Color originalColor;
+    protected bool invincible;
 
     protected virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         material = spriteRenderer.material;
+        invincible = false;
     }
 
     public virtual void TakeDamage (int damage)
     {
+        if (invincible)
+        {
+            return;
+        }
         health -= damage;
         originalColor = spriteRenderer.color;
         StartCoroutine("HurtFlash");
@@ -41,9 +48,15 @@ public class HealthSystem : MonoBehaviour
     IEnumerator HurtFlash ()
     {
         spriteRenderer.color = Color.white;
-        material.SetFloat("_IsHurt", 1.0f);
-        yield return new WaitForSeconds(flashTime);
-        material.SetFloat("_IsHurt", 0.0f);
+        invincible = true;
+        for (int i = 0; i < flashes; i++)
+        {
+            material.SetFloat("_IsHurt", 1.0f);
+            yield return new WaitForSeconds(flashTime/2);
+            material.SetFloat("_IsHurt", 0.0f);
+            yield return new WaitForSeconds(flashTime/2);
+        }
+        invincible = false;
         spriteRenderer.color = originalColor;
     }
 }

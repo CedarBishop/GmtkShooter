@@ -185,12 +185,17 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
+  bulletPrefab: {fileID: 0}
+  aimOriginTransform: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
   damage: 1
   movementSpeed: 50
   attackCooldown: 3
   attackDistance: 1
   alertDistance: 2.5
   patrolTargetDistance: 8
+  bulletDeviation: 0
+  bulletForce: 0
   score: 25
 --- !u!114 &1807775799167696688
 MonoBehaviour:
@@ -205,6 +210,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 5
+  flashes: 2
+  flashTime: 0.2
 --- !u!95 &4776478014947782737
 Animator:
   serializedVersion: 3
