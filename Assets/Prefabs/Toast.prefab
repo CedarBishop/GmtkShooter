@@ -212,6 +212,8 @@ MonoBehaviour:
   health: 5
   flashes: 2
   flashTime: 0.2
+  floatingPoints: {fileID: 5462955483026354630, guid: b338af415630fda479162a0a811fecdc,
+    type: 3}
 --- !u!95 &4776478014947782737
 Animator:
   serializedVersion: 3
