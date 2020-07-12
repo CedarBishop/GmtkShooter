@@ -10,16 +10,18 @@ public class Bob : MonoBehaviour
     public float height = 10;
     public float speed = 1;
     public float shift = 0;
+    RectTransform rect;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position;
+        rect = GetComponent<RectTransform>();
+        startPos = rect.anchoredPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = startPos + new Vector3(0f, height * Mathf.Sin(Time.unscaledTime * speed) + shift, 0f);  
+        rect.anchoredPosition = startPos + new Vector3(0f, height * Mathf.Sin(Time.unscaledTime * speed) + shift, 0f);
     }
 }

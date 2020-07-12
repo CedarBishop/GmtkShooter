@@ -45,15 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuSceneName: MainMenu
-  gameSceneName: IvanScene
+  gameSceneName: Game
   waveSystem: {fileID: 3277274780619392996}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1024
   minSpawnX: -12
   maxSpawnX: 12
-  minSpawnY: -9.5
-  maxSpawnY: 9.5
+  minSpawnY: -8.5
+  maxSpawnY: 8.5
 --- !u!114 &3277274780619392996
 MonoBehaviour:
   m_ObjectHideFlags: 0
