@@ -80,10 +80,11 @@ public class Bullet : MonoBehaviour
         if (collision.GetComponent<AIHealth>())
         {
             collision.GetComponent<AIHealth>().TakeDamage(damage);
+            SpawnSplat();
+
             if (enemySpeedUpAmount > 0)
             {
                 collision.GetComponent<AI>().movementSpeed += enemySpeedUpAmount;
-                SpawnSplat();
             }
 
 
