@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuSceneName: MainMenu
-  gameSceneName: GameScene
+  gameSceneName: IvanScene
   waveSystem: {fileID: 3277274780619392996}
   obstacleLayer:
     serializedVersion: 2
