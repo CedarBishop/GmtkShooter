@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
 
     public Text roundText;
     public Text scoreText;
-    public Text healthText;
+    public Image healthImage;
     public Text ammoText;
     public Text timerText;
 
@@ -193,7 +193,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHealth (int num)
     {
-        healthText.text = "Health: " + num;
+        healthImage.fillAmount = num / 5f;
     }
 
     public void UpdateWave(int num)
