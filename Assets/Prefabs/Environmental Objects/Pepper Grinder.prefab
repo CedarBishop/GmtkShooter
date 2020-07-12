@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3129528616611145610}
   - component: {fileID: 3129528616611145611}
   - component: {fileID: 3129528616611145608}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pepper Grinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5074576776464826928}
   - component: {fileID: 942116786689686805}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shadow Texture (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

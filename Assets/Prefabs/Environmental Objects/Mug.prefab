@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6776816362894003519}
   - component: {fileID: 4975722325924308771}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shadow Texture (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6381871791019295132}
   - component: {fileID: 6381871791019295203}
   - component: {fileID: 6381871791019295202}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mug
   m_TagString: Untagged
   m_Icon: {fileID: 0}

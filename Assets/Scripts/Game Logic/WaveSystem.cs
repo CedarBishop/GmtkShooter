@@ -78,7 +78,7 @@ public class WaveSystem : MonoBehaviour
         while (currentAisSpawnedThisRound < aisToBeSpawnedThisRound)
         {
             yield return new WaitForSeconds(timeBetweenSpawns);
-            Instantiate(aitypesSpawnedThisRound[Random.Range(0, aitypesSpawnedThisRound.Count)], new Vector2(), Quaternion.identity);
+            Instantiate(aitypesSpawnedThisRound[Random.Range(0, aitypesSpawnedThisRound.Count)], GameManager.instance.GetClearLocationOnMap(minX,maxX, minY, maxY), Quaternion.identity);
             currentAisSpawnedThisRound++;
         }
     }

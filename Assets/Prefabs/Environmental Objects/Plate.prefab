@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3230674901475186805}
   - component: {fileID: 3230674901475186804}
   - component: {fileID: 3230674901475186807}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8684553427083845558}
   - component: {fileID: 1622873508406639675}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shadow Texture (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

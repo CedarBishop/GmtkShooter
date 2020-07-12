@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     public WaveSystem waveSystem;
 
+    public LayerMask obstacleLayer;
     public float minSpawnX;
     public float maxSpawnX;
     public float minSpawnY;
@@ -46,16 +47,34 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public bool IsWithinMap (Vector2 pos)
+    public bool CanSpawnHere (Vector2 pos)
     {
         if (pos.x > minSpawnX && pos.x < maxSpawnX)
         {
             if (pos.y > minSpawnY && pos.y < maxSpawnY)
             {
-                return true;
+                if (Physics2D.OverlapCircle(pos, 0.2f, obstacleLayer))
+                {
+                    // dont spawn here as it is in obstacle
+                }
+                else
+                {
+                    return true;
+                }
+                
             }
         }
         return false;
+    }
+
+    public Vector2 GetClearLocationOnMap(float minX, float maxX, float minY, float maxY)
+    {
+        Vector2 pos;
+        do
+        {
+            pos = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        } while (CanSpawnHere(pos) == false);
+        return pos;
     }
 
 }
