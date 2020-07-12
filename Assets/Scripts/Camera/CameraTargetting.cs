@@ -20,6 +20,11 @@ public class CameraTargetting : MonoBehaviour
 
     void Update()
     {
+        if (playerPos == null)
+        {
+            return;
+        }
+
         // Gamepad camera controls
         if (input.currentControlScheme == "Gamepad")
         {

@@ -35,6 +35,10 @@ public class AI_Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Environment"))
+        {
+            Destroy(gameObject);
+        }
         if (collision.GetComponent<PlayerHealth>())
         {
             collision.GetComponent<PlayerHealth>().TakeDamage(damage);

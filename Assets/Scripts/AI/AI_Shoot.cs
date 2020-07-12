@@ -23,6 +23,10 @@ public class AI_Shoot : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        if (playerMovement == null)
+        {
+            return;
+        }
         if (CheckDistance(ai.alertDistance, playerMovement.transform.position))
         {
             if (AttackCooldown()) // Set attack Cooldown

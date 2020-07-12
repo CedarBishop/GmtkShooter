@@ -16,6 +16,10 @@ public class AI_MeleeAttack : StateMachineBehaviour
 
     void Attack ()
     {
+        if (playerHealth == null)
+        {
+            return;
+        }
         Vector2 directionToPlayer = playerHealth.transform.position - ai.transform.position;
         if (Physics2D.OverlapCircle(ai.transform.position + new Vector3(directionToPlayer.x * 0.5f , directionToPlayer.y * 0.5f, 0), ai.attackDistance, ai.playerLayer))
         {

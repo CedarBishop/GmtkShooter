@@ -10,7 +10,12 @@ public class Shadow : MonoBehaviour
     {
         if (target != null)
         {
-            transform.position = target.position + Vector3.down;            
+            transform.position = target.position + Vector3.down;
+            if (transform.rotation.eulerAngles.z != 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            
         }
         else
         {

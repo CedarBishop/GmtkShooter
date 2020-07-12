@@ -16,6 +16,10 @@ public class AI_Trident : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (player == null)
+        {
+            return;
+        }
         Vector2 direction = (player.transform.position - aimOrigin.position).normalized;
         aimOrigin.right = direction;
     }
