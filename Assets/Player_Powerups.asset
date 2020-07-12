@@ -19,7 +19,7 @@ MonoBehaviour:
   lightningEnemyCount: 2
   damageIncrease: 2
   sunExplodeBulletIncrease: 2
-  knockbackIncrease: 0
+  knockbackIncrease: 750
   knockbackAngleIncrease: 25
   zigzagAngleIncrease: 50
   bulletDeviationIncrease: 30
