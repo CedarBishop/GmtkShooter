@@ -45,4 +45,104 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuMusic: {fileID: 0}
   gameMusic: {fileID: 0}
-  sounds: []
+  sounds:
+  - name: SFX_PlayerShot
+    clip: {fileID: 8300000, guid: 91f509df82141e04e8c9fde34d71b3b6, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 1
+  - name: SFX_PlayerHit
+    clip: {fileID: 8300000, guid: 099a6744fb4931c41977b00491e23dcd, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_JamSpawn
+    clip: {fileID: 8300000, guid: b259026cb332bad449f9d5a63fb70a83, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_PickUp
+    clip: {fileID: 8300000, guid: 01549cbcf097c9146ba017538a35ed58, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_WornOff
+    clip: {fileID: 8300000, guid: 27e5896d8ce3bd14f8a4826a5693201e, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_Reload
+    clip: {fileID: 8300000, guid: 83ac64c4c10740d40baae54d2613c315, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_WaveSpawn
+    clip: {fileID: 8300000, guid: 0b2e2b4cc59d3aa4a8d17ca73c8908b0, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_WaveCleared
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_EnemyHit
+    clip: {fileID: 8300000, guid: 13cd4582a47e7d04bb00a509c0c1a899, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_Melee
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_EggShot
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_SpeedUp
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_EnemyDeath
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_Combo1
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_Combo2
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_Combo3
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_ButtonClick
+    clip: {fileID: 8300000, guid: fbf29977869f9a34e96a5b35d2617914, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_ButtonRelease
+    clip: {fileID: 8300000, guid: fd7bb232d0f82884fa9bd2af6b552497, type: 3}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_GameOver
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
+  - name: SFX_StartButton
+    clip: {fileID: 0}
+    source: {fileID: 0}
+    pitch: 0
+    volume: 0
