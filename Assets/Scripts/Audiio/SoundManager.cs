@@ -15,8 +15,6 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     Sound[] sounds;
 
-    //public List<PlayerAudio> playerAudioList = new List<PlayerAudio>();
-
     [Range(0.0f, 1.0f)] private float currentSfxVolume;
     [Range(0.0f, 1.0f)] private float currentMusicVolume;
 

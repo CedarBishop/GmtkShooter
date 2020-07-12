@@ -70,15 +70,12 @@ public class Bullet : MonoBehaviour
         if (collision.GetComponent<AIHealth>())
         {
             collision.GetComponent<AIHealth>().TakeDamage(damage);
+            if (enemySpeedUpAmount > 0)
+            {
+                collision.GetComponent<AI>().movementSpeed += enemySpeedUpAmount;
+            }
             Destroy(gameObject);
-            //if (enemySpeedUpAmount > 0)
-            //{
-            //    collision.GetComponent<AI>().movementSpeed += enemySpeedUpAmount;
-            //}
-            //if (enemyHealAmount > 0)
-            //{
-            //    collision.GetComponent<AIHealth>().Heal(enemyHealAmount);
-            //}
+
             //if (lightningCount > 0)
             //{
             //    Collider2D collider = Physics2D.OverlapCircle(transform.position, 3, enemyLayer);
@@ -88,7 +85,7 @@ public class Bullet : MonoBehaviour
             //        transform.right = direction;
             //        lightningCount--;
             //    }
-            //}            
+            //}
             //if (explosionProjectileCount > 0)
             //{
             //    for (int i = 0; i < explosionProjectileCount; i++)

@@ -424,7 +424,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3943498636559487673}
-  - {fileID: 1073632884949093867}
   m_Father: {fileID: 2837118027856106808}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1004,8 +1003,8 @@ RectTransform:
   - {fileID: 6360930533908852904}
   - {fileID: 4592680915876540742}
   - {fileID: 3297893342318497017}
-  m_Father: {fileID: 3146401401597830814}
-  m_RootOrder: 1
+  m_Father: {fileID: 2837118027856106808}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1237,7 +1236,6 @@ GameObject:
   - component: {fileID: 6949839459654161033}
   - component: {fileID: 4223239838788913517}
   - component: {fileID: 5615242388050237263}
-  - component: {fileID: 6578028340204351902}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1260,6 +1258,7 @@ RectTransform:
   - {fileID: 8335369948857914739}
   - {fileID: 5602581011322923900}
   - {fileID: 4543903741168494454}
+  - {fileID: 1073632884949093867}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1341,12 +1340,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuUIParent: {fileID: 1017584629712329988}
+  tutorialUIParent: {fileID: 3151157823040141500}
   gameUIParent: {fileID: 8075332525110982046}
   pauseUIParent: {fileID: 2687135435291950129}
   endMatchUIParent: {fileID: 864931627035115134}
   buffTray: {fileID: 7739240112872025557}
   nerfTray: {fileID: 8337230972428285014}
-  startingUIState: 1
+  startingUIState: 0
   roundText: {fileID: 3819176496577881973}
   scoreText: {fileID: 2417203107567562864}
   healthText: {fileID: 6443258511138370031}
@@ -1354,20 +1354,6 @@ MonoBehaviour:
   timerText: {fileID: 7018161425842748702}
   buffBadge: {fileID: 4168957112535710156, guid: d06080c7b8727df489ab51134066c528,
     type: 3}
---- !u!114 &6578028340204351902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4035109676109280835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e23e884a91fae6649a08646b93626ba9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  main: {fileID: 3849688892618674791}
-  tutorial: {fileID: 3151157823040141500}
 --- !u!1 &4951031504429108570
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,11 +2844,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6578028340204351902}
+      objectReference: {fileID: 5615242388050237263}
     - target: {fileID: 7436398279344829972, guid: 8d0be560b6742524290ac407cde924ee,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Toggle
+      value: GoToTutorial
       objectReference: {fileID: 0}
     - target: {fileID: 7436398279344829972, guid: 8d0be560b6742524290ac407cde924ee,
         type: 3}
@@ -3823,11 +3809,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6578028340204351902}
+      objectReference: {fileID: 5615242388050237263}
     - target: {fileID: 7436398279344829972, guid: 8d0be560b6742524290ac407cde924ee,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Toggle
+      value: ReturnToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 7436398279344829972, guid: 8d0be560b6742524290ac407cde924ee,
         type: 3}

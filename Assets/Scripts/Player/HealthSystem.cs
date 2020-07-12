@@ -12,12 +12,14 @@ public class HealthSystem : MonoBehaviour
     private Material material;
     private Color originalColor;
     protected bool invincible;
+    bool isDead;
 
     protected virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         material = spriteRenderer.material;
         invincible = false;
+        isDead = false;
     }
 
     public virtual void TakeDamage (int damage)
@@ -31,7 +33,10 @@ public class HealthSystem : MonoBehaviour
         StartCoroutine("HurtFlash");
         if (health <= 0)
         {
-            Death();
+            if (isDead == false)
+            {
+                Death();
+            }            
         }
     }
 
@@ -42,6 +47,7 @@ public class HealthSystem : MonoBehaviour
 
     protected virtual void Death ()
     {
+        isDead = true;
         Destroy(gameObject);
     }
 

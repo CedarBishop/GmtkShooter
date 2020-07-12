@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum UIState {MainMenu, Game, Pause, EndMatch }
+public enum UIState {MainMenu, Tutorial, Game, Pause, EndMatch }
 
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance = null;
 
     public GameObject mainMenuUIParent;
+    public GameObject tutorialUIParent;
     public GameObject gameUIParent;
     public GameObject pauseUIParent;
     public GameObject endMatchUIParent;
@@ -51,6 +52,7 @@ public class UIManager : MonoBehaviour
         uiState = state;
 
         mainMenuUIParent.SetActive(false);
+        tutorialUIParent.SetActive(false);
         gameUIParent.SetActive(false);
         pauseUIParent.SetActive(false);
         endMatchUIParent.SetActive(false);
@@ -59,6 +61,10 @@ public class UIManager : MonoBehaviour
         {
             case UIState.MainMenu:
                 mainMenuUIParent.SetActive(true);
+                Time.timeScale = 1.0f;
+                break;
+            case UIState.Tutorial:
+                tutorialUIParent.SetActive(true);
                 Time.timeScale = 1.0f;
                 break;
             case UIState.Game:
@@ -98,6 +104,22 @@ public class UIManager : MonoBehaviour
     {
         GameManager.instance.GoToMainMenu();
         SetUIState(UIState.MainMenu);
+    }
+
+    public void ReturnToMainMenu ()
+    {
+        SetUIState(UIState.MainMenu);
+    }
+
+    public void GoToTutorial ()
+    {
+        SetUIState(UIState.Tutorial);
+    }
+
+
+    public void Clear ()
+    {
+        
     }
 
     public void TogglePause ()

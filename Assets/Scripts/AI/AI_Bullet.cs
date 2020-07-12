@@ -5,7 +5,7 @@ using UnityEngine;
 public class AI_Bullet : MonoBehaviour
 {
     public float timeToLive;
-
+    public Shadow shadow;
     private Rigidbody2D rigidbody;
 
     private int damage;
@@ -14,6 +14,7 @@ public class AI_Bullet : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        shadow.transform.parent = null;
     }
 
     public void Initialise(int Damage, float Force, float BulletDeviation)
