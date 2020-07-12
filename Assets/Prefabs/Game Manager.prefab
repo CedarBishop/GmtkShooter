@@ -50,10 +50,10 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1024
-  minSpawnX: -8
+  minSpawnX: -12
   maxSpawnX: 12
-  minSpawnY: -8
-  maxSpawnY: 8
+  minSpawnY: -9.5
+  maxSpawnY: 9.5
 --- !u!114 &3277274780619392996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,10 +74,12 @@ MonoBehaviour:
   - ai: {fileID: 4584077119857896133, guid: 3267421a5624b874d92896fcbc5846cf, type: 3}
     roundWhenStartSpawning: 3
   - ai: {fileID: 4584077119857896133, guid: 505a00e3122de3d4f8627ea3bc40e903, type: 3}
-    roundWhenStartSpawning: 4
+    roundWhenStartSpawning: 5
+  - ai: {fileID: 4584077119857896133, guid: 3709c7658e3fff34ebf237b07394b9ca, type: 3}
+    roundWhenStartSpawning: 1
   roundNumber: 0
-  extraAISpawnedPerRound: 5
-  roundOneAISpawnAmount: 5
+  extraAISpawnedPerRound: 10
+  roundOneAISpawnAmount: 15
   timeBetweenSpawns: 2
   timeBetweenRounds: 3
   currentScore: 0

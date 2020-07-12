@@ -1513,57 +1513,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: minSpawnX
-      value: -12
-      objectReference: {fileID: 0}
-    - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: maxSpawnX
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: minSpawnY
-      value: -9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: maxSpawnY
-      value: 9.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: ais.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: extraAISpawnedPerRound
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: ais.Array.data[3].roundWhenStartSpawning
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: ais.Array.data[4].ai
-      value: 
-      objectReference: {fileID: 4584077119857896133, guid: 3709c7658e3fff34ebf237b07394b9ca,
-        type: 3}
-    - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: ais.Array.data[4].roundWhenStartSpawning
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
-        type: 3}
-      propertyPath: roundOneAISpawnAmount
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 6406729066066924269, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
       propertyPath: m_Name
