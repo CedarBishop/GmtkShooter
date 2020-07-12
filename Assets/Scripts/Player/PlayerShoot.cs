@@ -58,6 +58,7 @@ public class PlayerShoot : MonoBehaviour
         canShoot = true;
         ammo = clipSize;
         isReloading = false;
+        UIManager.instance.UpdateAmmo(ammo);
     }
 
     void OnAim (InputValue value)
@@ -109,10 +110,12 @@ public class PlayerShoot : MonoBehaviour
     IEnumerator CoReload ()
     {
         ammo = 0;
+        UIManager.instance.UpdateAmmo(ammo);
         isReloading = true;
         yield return new WaitForSeconds(reloadTime);
         ammo = clipSize;
         isReloading = false;
+        UIManager.instance.UpdateAmmo(ammo);
     }
 
     void OnShoot ()
@@ -160,6 +163,12 @@ public class PlayerShoot : MonoBehaviour
 
         ammo--;
 
+        UIManager.instance.UpdateAmmo(ammo);
+
+        if (ammo <= 0)
+        {
+            OnReload();           
+        }
         if (cameraShake != null)
         {
             cameraShake.StartShake(cameraShakeDuration, cameraShakeMagnitude);
