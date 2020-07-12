@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5937335291478544964}
   - component: {fileID: 156775199680742287}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow Texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4776478014947782737}
   - component: {fileID: 836107402387500425}
   - component: {fileID: 2096110711781507317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Toast
   m_TagString: Untagged
   m_Icon: {fileID: 0}

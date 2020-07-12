@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public Bullet bulletPrefab;
     public float timeToLive;
-    
+    public LayerMask enemyLayer;
     private float force;
     private int damage;
 
     private Rigidbody2D rigidbody;
     private float redirectAngle;
     private float redirectTime;
+    private int lightningCount;
+    private int explosionProjectileCount;
+    private float enemySpeedUpAmount;
+    private int enemyHealAmount;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Initialise (int Damage, float Force, float RedirectAngle, float RedirectTime, float BulletDeviation)
+    public void Initialise (int Damage, float Force, float RedirectAngle, float RedirectTime, float BulletDeviation, int LightningCount, int ExplosionProjectileCount, int EnemyHealAmount, float EnemySpeedupAmount)
     {       
         StartCoroutine("DestroySelf");
         StartCoroutine("Redirect");
@@ -26,6 +31,10 @@ public class Bullet : MonoBehaviour
         redirectTime = RedirectTime;
         force = Force;
         damage = Damage;
+        lightningCount = LightningCount;
+        explosionProjectileCount = ExplosionProjectileCount;
+        enemyHealAmount = EnemyHealAmount;
+        enemySpeedUpAmount = EnemySpeedupAmount;
 
         float zRotation = transform.rotation.eulerAngles.z + Random.Range(-BulletDeviation, BulletDeviation);
         transform.rotation = Quaternion.Euler(0, 0, zRotation);
@@ -59,7 +68,36 @@ public class Bullet : MonoBehaviour
         if (collision.GetComponent<AIHealth>())
         {
             collision.GetComponent<AIHealth>().TakeDamage(damage);
-            Destroy(gameObject);
+            if (enemySpeedUpAmount > 0)
+            {
+                collision.GetComponent<AI>().movementSpeed += enemySpeedUpAmount;
+            }
+            if (enemyHealAmount > 0)
+            {
+                collision.GetComponent<AIHealth>().Heal(enemyHealAmount);
+            }
+            if (lightningCount > 0)
+            {
+                Collider2D collider = Physics2D.OverlapCircle(transform.position, 3, enemyLayer);
+                if (collider != null)
+                {
+                    Vector2 direction = (collider.transform.position - transform.position).normalized;
+                    transform.right = direction;
+                    lightningCount--;
+                }
+            }            
+            if (explosionProjectileCount > 0)
+            {
+                for (int i = 0; i < explosionProjectileCount; i++)
+                {
+                    Bullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0,0, Random.Range(0, 359.9f)));
+                    bullet.Initialise(damage, force, redirectAngle, redirectTime,0,0,0, enemyHealAmount,enemySpeedUpAmount);
+                }
+            }
+            if (explosionProjectileCount <= 0 && lightningCount <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -236,14 +236,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8f77fece2a19a744caa34b4e05cc2627, type: 2}
   - {fileID: 11400000, guid: acd6061640b33c34eac263492d21302f, type: 2}
   possibleNerfs:
-  - {fileID: 11400000, guid: 411a37172e9c8d1468eca59fc45a3c47, type: 2}
+  - {fileID: 11400000, guid: cfafdc26444f4914ea778dcbd859263a, type: 2}
   - {fileID: 11400000, guid: f70fbd9b0c67d1f46afe5a489a55ee14, type: 2}
-  - {fileID: 11400000, guid: b7c315d7302b379478db0c510cd0d244, type: 2}
+  - {fileID: 11400000, guid: 4a50782eee7af0a47afd9ba4c7306bf5, type: 2}
   - {fileID: 11400000, guid: 9a06cdb5d7bda164baab5cbd5394dcb4, type: 2}
   - {fileID: 11400000, guid: 348471bd70d0fb64b90b3afb49ca7f02, type: 2}
   - {fileID: 11400000, guid: d5b2b1823940e7344964f961619157af, type: 2}
-  - {fileID: 11400000, guid: 4a50782eee7af0a47afd9ba4c7306bf5, type: 2}
-  - {fileID: 11400000, guid: cfafdc26444f4914ea778dcbd859263a, type: 2}
   duration: 15
 --- !u!95 &7535240965955641460
 Animator:

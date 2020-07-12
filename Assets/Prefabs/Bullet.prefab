@@ -47,7 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93bbaaaa8107734ead72bfb0abd784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1733272096102337619}
   timeToLive: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!58 &1733272096102337616
 CircleCollider2D:
   m_ObjectHideFlags: 0

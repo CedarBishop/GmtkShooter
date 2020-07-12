@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9000074806420762788}
   - component: {fileID: 734064566448654611}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Shadow Texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 4776478014947782737}
   - component: {fileID: 836107402387500425}
   - component: {fileID: 2096110711781507317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Loops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
