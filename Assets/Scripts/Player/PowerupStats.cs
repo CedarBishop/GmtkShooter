@@ -7,7 +7,8 @@ public class PowerupStats : ScriptableObject
 {
     [Header("Buff Amounts")]
     public int multiShotIncrease;
-    public int bulletScaleIncrease;
+    public float bulletScaleIncrease;
+    public int bulletDamageIncrease;
     public float rapidFireMultiplier;
     public int lightningEnemyCount;
     public int damageIncrease;

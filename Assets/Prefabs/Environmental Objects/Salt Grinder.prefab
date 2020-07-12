@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8947436652195946567}
   - component: {fileID: 6848597746226371623}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shadow Texture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 6934953671853046549}
   - component: {fileID: 6934953671853046548}
   - component: {fileID: 6934953671853046551}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Salt Grinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

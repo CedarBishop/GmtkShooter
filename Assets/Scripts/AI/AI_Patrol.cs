@@ -18,7 +18,7 @@ public class AI_Patrol : StateMachineBehaviour
         player = FindObjectOfType<PlayerHealth>();
         ai = animator.GetComponent<AI>();
         rigidbody = ai.GetComponent<Rigidbody2D>();
-        target = SetPatrolTarget();
+        GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance, ai.patrolTargetDistance, -ai.patrolTargetDistance, ai.patrolTargetDistance);
         alertDistance = ai.alertDistance;
         movementSpeed = ai.movementSpeed;
     }
@@ -32,7 +32,7 @@ public class AI_Patrol : StateMachineBehaviour
         }
         if (CheckDistance(0.01f, target))
         {
-            SetPatrolTarget();
+            GameManager.instance.GetClearLocationOnMap(-ai.patrolTargetDistance, ai.patrolTargetDistance, -ai.patrolTargetDistance, ai.patrolTargetDistance);
         }
         else
         {
@@ -48,15 +48,6 @@ public class AI_Patrol : StateMachineBehaviour
             return true;
         }
         return false;
-    }
-
-    Vector2 SetPatrolTarget ()
-    {
-        Vector2 pos;
-        do
-        {
-            pos = new Vector2(Random.Range(-ai.patrolTargetDistance, ai.patrolTargetDistance), Random.Range(-ai.patrolTargetDistance, ai.patrolTargetDistance));
-        } while (GameManager.instance.IsWithinMap(pos) == false);
-        return pos;
-    }
+    }    
+    
 }

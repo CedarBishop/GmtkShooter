@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 508599657431225095, guid: e58de5f068e843a4daa6634c07fb1b03,
+        type: 3}
+      propertyPath: obstacleLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 3277274780619392996, guid: e58de5f068e843a4daa6634c07fb1b03,
         type: 3}
       propertyPath: timeBetweenSpawns

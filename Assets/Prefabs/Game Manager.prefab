@@ -47,6 +47,9 @@ MonoBehaviour:
   mainMenuSceneName: MainMenu
   gameSceneName: GameScene
   waveSystem: {fileID: 3277274780619392996}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   minSpawnX: -8
   maxSpawnX: 12
   minSpawnY: -8

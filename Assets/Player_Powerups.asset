@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Player_Powerups
   m_EditorClassIdentifier: Assembly-CSharp::PowerupStats
   multiShotIncrease: 1
-  bulletScaleIncrease: 1
-  rapidFireMultiplier: 2
+  bulletScaleIncrease: 2
+  rapidFireMultiplier: 1.5
   lightningEnemyCount: 2
   damageIncrease: 1
   sunExplodeBulletIncrease: 5
-  knockbackIncrease: 1000
-  knockbackAngleIncrease: 20
+  knockbackIncrease: 1200
+  knockbackAngleIncrease: 25
   zigzagAngleIncrease: 30
-  bulletDeviationIncrease: 10
+  bulletDeviationIncrease: 15
   healthToEnemyIncrease: 1
-  enemySpeedIncreaseOnHit: 50
+  enemySpeedIncreaseOnHit: 25

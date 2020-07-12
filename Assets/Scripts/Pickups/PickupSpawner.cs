@@ -47,7 +47,7 @@ public class PickupSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(timeBetweenSpawns);
-            Vector3 pos = new Vector3(Random.Range(minX,maxX), Random.Range(minY, maxY) ,0);
+            Vector2 pos = GameManager.instance.GetClearLocationOnMap(minX, maxX, minY, maxY);
             Instantiate(pickup, pos, Quaternion.identity);
         }
     }
