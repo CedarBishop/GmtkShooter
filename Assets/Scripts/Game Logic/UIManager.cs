@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         SetUIState(startingUIState);
-        StartCoroutine("DelayedStart");
+        StartCoroutine("DelayStart");
     }
 
     IEnumerator DelayStart ()

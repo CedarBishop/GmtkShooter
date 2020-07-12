@@ -88,7 +88,7 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0.7
   - name: SFX_EggShot
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 6a5d6b494e2079f48947067aa0b5602c, type: 3}
     source: {fileID: 0}
     volume: 0.7
   - name: SFX_SpeedUp

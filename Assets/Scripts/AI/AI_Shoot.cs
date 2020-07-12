@@ -63,6 +63,11 @@ public class AI_Shoot : StateMachineBehaviour
                    ai.aimOriginTransform.rotation);
 
         bullet.Initialise(ai.damage, ai.bulletForce, ai.bulletDeviation);
+
+        if (SoundManager.instance != null)
+        {
+            SoundManager.instance.PlaySFX("SFX_EggShot");
+        }
     }
 
     bool AttackCooldown()

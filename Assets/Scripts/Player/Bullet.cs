@@ -97,6 +97,10 @@ public class Bullet : MonoBehaviour
             if (enemySpeedUpAmount > 0)
             {
                 collision.GetComponent<AI>().movementSpeed += enemySpeedUpAmount;
+                if (SoundManager.instance != null)
+                {
+                    SoundManager.instance.PlaySFX("SFX_SpeedUp");
+                }
             }
 
 
@@ -108,6 +112,12 @@ public class Bullet : MonoBehaviour
                     Bullet bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 359.9f)));
                     Instantiate(clusterEffect, transform.position, Quaternion.identity);
                     bullet.Initialise(damage, force, redirectAngle, redirectTime, 0, 0, 0, enemyHealAmount, enemySpeedUpAmount, collision);
+                }
+
+                CameraShake cameraShake = Camera.main.GetComponent<CameraShake>();
+                if (cameraShake != null)
+                {
+                    cameraShake.StartShake(0.1f,0.3f);
                 }
             }
             if (lightningCount > 0)
